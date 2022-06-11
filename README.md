@@ -1,5 +1,5 @@
 # Server Room Monitoring
-###Zabbix monitoring temperature ant humidiry based on Arduino.
+## Zabbix monitoring temperature ant humidiry based on Arduino.
 
 ###### Server Room Monitoring - a device for monitoring the temperature and humidity of servers, server rooms and just for rooms where environmental control is needed.
 
