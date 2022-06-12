@@ -1,37 +1,31 @@
-## Welcome to GitHub Pages
+# Server Room Monitoring
+## Zabbix monitoring temperature ant humidiry based on Arduino.
 
-You can use the [editor on GitHub](https://github.com/disasstor/Server-Room-Monitoring/edit/main/docs/index.md) to maintain and preview the content for your website in Markdown files.
+###### Server Room Monitoring - a device for monitoring the temperature and humidity of servers, server rooms and just for rooms where environmental control is needed.
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
 
-### Markdown
+------------
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+##### The differences between this system and Zabbuino in open source for the Arduino IDE. Anyone can customize the device to suit their needs. 
+##### You can remove the display if display control is not needed, or change it to any other display by rewriting the code a bit. 
+##### You can add or remove any sensor, for example, you can control the content of carbon dioxide or dust particles in the air, everything that you can implement on Arduino can be done here.
 
-```markdown
-Syntax highlighted code block
+------------
 
-# Header 1
-## Header 2
-### Header 3
 
-- Bulleted
-- List
+##### Components that I used:
+- **Arduino UNO R3**
 
-1. Numbered
-2. List
+- **Ethernet shield w5500**
 
-**Bold** and _Italic_ and `Code` text
+- **SHT31 1pc**
 
-[Link](url) and ![Image](src)
-```
+- **DS18B20 I used 5pcs, you can choose the quantity you need.**
 
-For more details see [Basic writing and formatting syntax](https://docs.github.com/en/github/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax).
+- **LCD 1602 i2c**
 
-### Jekyll Themes
+- **Resistor 4.7k**
 
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/disasstor/Server-Room-Monitoring/settings/pages). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
+- **Housing for din rail D6MG**
 
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://support.github.com/contact) and we’ll help you sort it out.
+- **RJ45 Cat5 Dual Port Surface Mount Box for Ethernet Cables - I used it as a sensor enclosure**
