@@ -22,6 +22,7 @@
 
 </details>
 
+
 - **Ethernet shield w5100 1pc**
 
 <details>
@@ -29,6 +30,7 @@
 ![Ethernet shield w5100](https://github.com/disasstor/Server-Room-Monitoring/blob/main/docs/img_w5100.png?raw=true "Ethernet shield w5100")
 
 </details>
+
 
 - **SHT31 1pc**
 
@@ -38,6 +40,7 @@
 
 </details>
 
+
 - **DS18B20 I used 5pcs, you can choose the quantity you need.**
 
 <details>
@@ -45,6 +48,7 @@
 ![DS18B20](https://github.com/disasstor/Server-Room-Monitoring/blob/main/docs/img_ds18b20.png?raw=true "DS18B20")
 
 </details>
+
 
 - **LCD 1602 i2c 1pc**
 
@@ -54,6 +58,7 @@
 
 </details>
 
+
 - **Resistor 4.7k 1pc**
 
 <details>
@@ -62,6 +67,7 @@
 
 </details>
 
+
 - **Housing for din rail D6MG 1pc**
 
 <details>
@@ -69,6 +75,7 @@
 ![D6MG](https://github.com/disasstor/Server-Room-Monitoring/blob/main/docs/img_d6mg.png?raw=true "D6MG")
   
 </details>
+
 
 - **RJ45 Cat5 Dual Port Surface Mount Box for Ethernet Cables 1pc - I used it as a sensor enclosure**
 
