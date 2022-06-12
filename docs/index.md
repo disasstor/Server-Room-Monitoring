@@ -15,6 +15,7 @@
 
 ##### Components that I used:
 - **Arduino UNO R3 1pc**
+  
   ![Arduino UNO R3](https://github.com/disasstor/Server-Room-Monitoring/blob/main/docs/img_arduino.png?raw=true "Arduino UNO R3")
 
 - **Ethernet shield w5100 1pc**
