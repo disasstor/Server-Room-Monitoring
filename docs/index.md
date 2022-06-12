@@ -65,12 +65,16 @@
 - **Housing for din rail D6MG 1pc**
 
 <details>
+  
 ![D6MG](https://github.com/disasstor/Server-Room-Monitoring/blob/main/docs/img_d6mg.png?raw=true "D6MG")
+  
 </details>
 
 - **RJ45 Cat5 Dual Port Surface Mount Box for Ethernet Cables 1pc - I used it as a sensor enclosure**
 
 <details>
+  
 ![RJ45 Cat5 Dual Port Surface Mount Box](https://github.com/disasstor/Server-Room-Monitoring/blob/main/docs/img_rj45.png?raw=true "RJ45 Cat5 Dual Port Surface Mount Box")
+  
 </details>
 
