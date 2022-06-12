@@ -17,7 +17,6 @@
 - **Arduino UNO R3 1pc**
 
 <details>
-<summary>- **Arduino UNO R3 1pc**</summary>
 
 ![Arduino UNO R3](https://github.com/disasstor/Server-Room-Monitoring/blob/main/docs/img_arduino.png?raw=true "Arduino UNO R3")
 
