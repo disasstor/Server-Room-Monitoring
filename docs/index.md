@@ -14,18 +14,27 @@
 
 
 ##### Components that I used:
-- **Arduino UNO R3**
+- **Arduino UNO R3 1pc**
+![Arduino UNO R3](https://github.com/disasstor/Server-Room-Monitoring/blob/main/docs/img_arduino.png?raw=true "Arduino UNO R3")
 
-- **Ethernet shield w5500**
+- **Ethernet shield w5100 1pc**
+![Ethernet shield w5100](https://github.com/disasstor/Server-Room-Monitoring/blob/main/docs/img_w5100.png?raw=true "Ethernet shield w5100")
 
 - **SHT31 1pc**
+![SHT31](https://github.com/disasstor/Server-Room-Monitoring/blob/main/docs/img_sht31.png?raw=true "SHT31")
 
 - **DS18B20 I used 5pcs, you can choose the quantity you need.**
+![DS18B20](https://github.com/disasstor/Server-Room-Monitoring/blob/main/docs/img_ds18b20.png?raw=true "DS18B20")
 
-- **LCD 1602 i2c**
+- **LCD 1602 i2c 1pc**
+![LCD 1602 i2c](https://github.com/disasstor/Server-Room-Monitoring/blob/main/docs/img_1602i2c.png?raw=true "LCD 1602 i2c")
 
-- **Resistor 4.7k**
+- **Resistor 4.7k 1pc**
+![Resistor 4.7k](https://github.com/disasstor/Server-Room-Monitoring/blob/main/docs/img_resistor4_7k.png?raw=true "Resistor 4.7k")
 
-- **Housing for din rail D6MG**
+- **Housing for din rail D6MG 1pc**
 
-- **RJ45 Cat5 Dual Port Surface Mount Box for Ethernet Cables - I used it as a sensor enclosure**
+
+- **RJ45 Cat5 Dual Port Surface Mount Box for Ethernet Cables 1pc - I used it as a sensor enclosure**
+
+
