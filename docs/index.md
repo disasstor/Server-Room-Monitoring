@@ -17,37 +17,49 @@
 - **Arduino UNO R3 1pc**
 
 <details>
+
 ![Arduino UNO R3](https://github.com/disasstor/Server-Room-Monitoring/blob/main/docs/img_arduino.png?raw=true "Arduino UNO R3")
+
 </details>
 
 - **Ethernet shield w5100 1pc**
 
 <details>
+
 ![Ethernet shield w5100](https://github.com/disasstor/Server-Room-Monitoring/blob/main/docs/img_w5100.png?raw=true "Ethernet shield w5100")
+
 </details>
 
 - **SHT31 1pc**
 
 <details>
+
 ![SHT31](https://github.com/disasstor/Server-Room-Monitoring/blob/main/docs/img_sht31.png?raw=true "SHT31")
+
 </details>
 
 - **DS18B20 I used 5pcs, you can choose the quantity you need.**
 
 <details>
+
 ![DS18B20](https://github.com/disasstor/Server-Room-Monitoring/blob/main/docs/img_ds18b20.png?raw=true "DS18B20")
+
 </details>
 
 - **LCD 1602 i2c 1pc**
 
 <details>
+
 ![LCD 1602 i2c](https://github.com/disasstor/Server-Room-Monitoring/blob/main/docs/img_1602i2c.png?raw=true "LCD 1602 i2c")
+
 </details>
 
 - **Resistor 4.7k 1pc**
 
 <details>
+
 ![Resistor 4.7k](https://github.com/disasstor/Server-Room-Monitoring/blob/main/docs/img_resistor4_7k.png?raw=true "Resistor 4.7k")
+
 </details>
 
 - **Housing for din rail D6MG 1pc**
