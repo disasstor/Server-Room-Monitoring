@@ -15,51 +15,51 @@
 
 ##### Components that I used:
 <details>
-<summary>**-Arduino UNO R3**</summary>
+<summary>Arduino UNO R3</summary>
 
-![Arduino UNO R3](https://github.com/disasstor/Server-Room-Monitoring/blob/main/docs/img_arduino.png?raw=true "Arduino UNO R3")
-
-</details>
-<details>
-<summary>**-Ethernet shield w5100**</summary>
-
-![Ethernet shield w5100](https://github.com/disasstor/Server-Room-Monitoring/blob/main/docs/img_w5100.png?raw=true "Ethernet shield w5100")
+![Arduino UNO R3](https://github.com/disasstor/Server-Room-Monitoring/blob/main/docs/img_arduino.png?raw=true)
 
 </details>
 <details>
-<summary>**-SHT31**</summary>
+<summary>Ethernet shield w5100</summary>
 
-![SHT31](https://github.com/disasstor/Server-Room-Monitoring/blob/main/docs/img_sht31.png?raw=true "SHT31")
-
-</details>
-<details>
-<summary>**-DS18B20**</summary>
-
-![DS18B20](https://github.com/disasstor/Server-Room-Monitoring/blob/main/docs/img_ds18b20.png?raw=true "DS18B20")
+![Ethernet shield w5100](https://github.com/disasstor/Server-Room-Monitoring/blob/main/docs/img_w5100.png?raw=true)
 
 </details>
 <details>
-<summary>**-LCD 1602 i2c**</summary>
+<summary>SHT31</summary>
 
-![LCD 1602 i2c](https://github.com/disasstor/Server-Room-Monitoring/blob/main/docs/img_1602i2c.png?raw=true "LCD 1602 i2c")
-
-</details>
-<details>
-<summary>**-Resistor 4.7k**</summary>
-
-![Resistor 4.7k](https://github.com/disasstor/Server-Room-Monitoring/blob/main/docs/img_resistor4_7k.png?raw=true "Resistor 4.7k")
+![SHT31](https://github.com/disasstor/Server-Room-Monitoring/blob/main/docs/img_sht31.png?raw=true)
 
 </details>
 <details>
-<summary>**Box for mount din rail D6MG**</summary>
+<summary>DS18B20</summary>
 
-![D6MG](https://github.com/disasstor/Server-Room-Monitoring/blob/main/docs/img_d6mg.png?raw=true "D6MG")
+![DS18B20](https://github.com/disasstor/Server-Room-Monitoring/blob/main/docs/img_ds18b20.png?raw=true)
 
 </details>
 <details>
-<summary>**-RJ45 Cat5 Dual Port Surface Mount Box**</summary>
+<summary>LCD 1602 i2c</summary>
 
-![RJ45 Cat5 Dual Port Surface Mount Box](https://github.com/disasstor/Server-Room-Monitoring/blob/main/docs/img_rj45.png?raw=true "RJ45 Cat5 Dual Port Surface Mount Box")
+![LCD 1602 i2c](https://github.com/disasstor/Server-Room-Monitoring/blob/main/docs/img_1602i2c.png?raw=true)
+
+</details>
+<details>
+<summary>Resistor 4.7k</summary>
+
+![Resistor 4.7k](https://github.com/disasstor/Server-Room-Monitoring/blob/main/docs/img_resistor4_7k.png?raw=true)
+
+</details>
+<details>
+<summary>Box for mount din rail D6MG**</summary>
+
+![D6MG](https://github.com/disasstor/Server-Room-Monitoring/blob/main/docs/img_d6mg.png?raw=true)
+
+</details>
+<details>
+<summary>RJ45 Cat5 Dual Port Surface Mount Box</summary>
+
+![RJ45 Cat5 Dual Port Surface Mount Box](https://github.com/disasstor/Server-Room-Monitoring/blob/main/docs/img_rj45.png?raw=true)
 
 </details>
 
