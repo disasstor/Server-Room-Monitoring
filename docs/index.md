@@ -1,6 +1,5 @@
 ###### Server Room Monitoring - a device for monitoring the temperature and humidity of servers, server rooms and just for rooms where environmental control is needed.
 
-
 ------------
 
 ##### The differences between this system and Zabbuino in open source for the Arduino IDE. Anyone can customize the device to suit their needs. 
@@ -9,10 +8,8 @@
 
 ------------
 
-
 # Electronic circuit:
 ![Shema](circuit.png)
-
 
 # Components that I used:
 -Arduino UNO R3
