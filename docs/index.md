@@ -13,27 +13,12 @@
 
 
 ##### Components that I used:
-Arduino UNO R3
-![Arduino UNO R3](img_arduino.png)
-
-Ethernet shield w5100
-![Ethernet shield w5100](img_w5100.png)
-
-SHT31
-![SHT31](img_sht31.png)
-
-DS18B20
-![DS18B20](img_ds18b20.png)
-
-LCD 1602 i2c
-![LCD 1602 i2c](img_1602i2c.png)
-
-Resistor 4.7k
-![Resistor 4.7k](img_resistor4_7k.png)
-
-Box for mount din rail D6MG
-![D6MG](img_d6mg.png)
-
-RJ45 Cat5 Dual Port Surface Mount Box
-![RJ45 Cat5 Dual Port Surface Mount Box](img_rj45.png)
+-Arduino UNO R3
+-Ethernet shield w5100
+-SHT31
+-DS18B20
+-LCD 1602 i2c
+-Resistor 4.7k
+-Box for mount din rail D6MG
+-RJ45 Cat5 Dual Port Surface Mount Box
 
