@@ -59,7 +59,7 @@ DeviceAddress addrsensdt[] = {                           // OneWire sensor addre
 ------------
 # Zabbix Settings:
 ```cpp
-char ZabbizItemKey = 'GetData'      //Item key of zabbix host
+String ZabbizItemKey = "GetData"      //Item key of zabbix host
 ```
 ------------
 ##### Read more about item key here: https://www.zabbix.com/documentation/current/en/manual/config/items/item
