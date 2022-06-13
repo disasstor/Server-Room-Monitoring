@@ -1,6 +1,6 @@
 # Server Room Monitoring
 ## Zabbix monitoring temperature ant humidiry based on Arduino.
-![Shema](shema.png)
+![Shema](circuit.png)
 ###### Server Room Monitoring - a device for monitoring the temperature and humidity of servers, server rooms and just for rooms where environmental control is needed.
 
 
@@ -14,52 +14,27 @@
 
 
 ##### Components that I used:
-<details>
-<summary>Arduino UNO R3</summary>
-
+Arduino UNO R3
 ![Arduino UNO R3](img_arduino.png)
 
-</details>
-<details>
-<summary>Ethernet shield w5100</summary>
+Ethernet shield w5100
+![Ethernet shield w5100](img_w5100.png)
 
-![Ethernet shield w5100](https://github.com/disasstor/Server-Room-Monitoring/blob/main/docs/img_w5100.png?raw=true)
+SHT31
+![SHT31](img_sht31.png)
 
-</details>
-<details>
-<summary>SHT31</summary>
+DS18B20
+![DS18B20](img_ds18b20.png)
 
-![SHT31](https://github.com/disasstor/Server-Room-Monitoring/blob/main/docs/img_sht31.png?raw=true)
+LCD 1602 i2c
+![LCD 1602 i2c](img_1602i2c.png)
 
-</details>
-<details>
-<summary>DS18B20</summary>
+Resistor 4.7k
+![Resistor 4.7k](img_resistor4_7k.png)
 
-![DS18B20](https://github.com/disasstor/Server-Room-Monitoring/blob/main/docs/img_ds18b20.png?raw=true)
+Box for mount din rail D6MG
+![D6MG](img_d6mg.png)
 
-</details>
-<details>
-<summary>LCD 1602 i2c</summary>
-
-![LCD 1602 i2c](https://github.com/disasstor/Server-Room-Monitoring/blob/main/docs/img_1602i2c.png?raw=true)
-
-</details>
-<details>
-<summary>Resistor 4.7k</summary>
-
-![Resistor 4.7k](https://github.com/disasstor/Server-Room-Monitoring/blob/main/docs/img_resistor4_7k.png?raw=true)
-
-</details>
-<details>
-<summary>Box for mount din rail D6MG**</summary>
-
-![D6MG](https://github.com/disasstor/Server-Room-Monitoring/blob/main/docs/img_d6mg.png?raw=true)
-
-</details>
-<details>
-<summary>RJ45 Cat5 Dual Port Surface Mount Box</summary>
-
-![RJ45 Cat5 Dual Port Surface Mount Box](https://github.com/disasstor/Server-Room-Monitoring/blob/main/docs/img_rj45.png?raw=true)
-
-</details>
+RJ45 Cat5 Dual Port Surface Mount Box
+![RJ45 Cat5 Dual Port Surface Mount Box](img_rj45.png)
 
