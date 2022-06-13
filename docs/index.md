@@ -84,9 +84,19 @@ IPAddress subnet(255, 255, 255, 0);                   // Change MASK if you need
 EthernetServer server(10050);                         // Change port if you need.
 ```
 
-
-
-
+# Zabbix Server Settings:
+1) Create host with parameters: //https://www.zabbix.com/documentation/current/en/manual/config/hosts/host
+- Name: your Room Name
+- Interface: Agent, IP address Server Room Monitoring in your network
+2) Create item with parameters: //https://www.zabbix.com/documentation/current/en/manual/config/items/item
+- Name: Data (for example)
+- Type: Zabbix agent(passive)
+- Key: Your item key (for example "GetData")
+- Type of information: text
+- Update interval: 10m (set how you needed)
+3) Create dependents items with parameters: //https://www.zabbix.com/documentation/current/en/manual/config/items/itemtypes/dependent_items
+- Name: Humidity in the server room(for example)
+- 
 # libraries that I used:
 - SPI
 
