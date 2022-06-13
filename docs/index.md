@@ -1,5 +1,3 @@
-# Electronic circuit
-![Shema](circuit.png)
 ###### Server Room Monitoring - a device for monitoring the temperature and humidity of servers, server rooms and just for rooms where environmental control is needed.
 
 
@@ -12,7 +10,11 @@
 ------------
 
 
-##### Components that I used:
+# Electronic circuit:
+![Shema](circuit.png)
+
+
+# Components that I used:
 -Arduino UNO R3
 
 -Ethernet shield w5100
