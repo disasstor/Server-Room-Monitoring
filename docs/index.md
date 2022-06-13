@@ -69,7 +69,7 @@ DeviceAddress addrsensdt[] = {
 ------------
 # Zabbix Settings:
 ```cpp
-String ZabbizItemKey = "GetData"      //Item key of zabbix host
+String ItemKey = "GetData"      //Item key of zabbix host
 ```
 ------------
 ##### Read more about item key here: https://www.zabbix.com/documentation/current/en/manual/config/items/item
