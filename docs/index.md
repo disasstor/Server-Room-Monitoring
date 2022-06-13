@@ -78,11 +78,11 @@ String ZabbizItemKey = "GetData"      //Item key of zabbix host
 
 # Network Settings:
 ```cpp
-byte mac[] = { 0x00, 0x00, 0x00, 0x00, 0x00, 0x00 };		// Important! Change MAC address! It must be unique on your local network.
-IPAddress ip(192, 168, 0, 100);						              // Change IP address if you need.
-IPAddress gateway(192, 168, 0, 1);					            // Change GW if you need.
-IPAddress subnet(255, 255, 255, 0);					            // Change MASK if you need.
-EthernetServer server(10050);							              // Change port if you need.
+byte mac[] = { 0x00, 0x00, 0x00, 0x00, 0x00, 0x00 };  // Important! Change MAC address! It must be unique on your local network.
+IPAddress ip(192, 168, 0, 100);                       // Change IP address if you need.
+IPAddress gateway(192, 168, 0, 1);                    // Change GW if you need.
+IPAddress subnet(255, 255, 255, 0);                   // Change MASK if you need.
+EthernetServer server(10050);                         // Change port if you need.
 ```
 
 
