@@ -15,19 +15,12 @@
 ![Shema](circuit.png)
 
 # Components that I used:
-###### Arduino UNO R3
-
-###### Ethernet shield w5100
-
-###### SHT31
-
-###### DS18B20
-
-###### LCD 1602 i2c
-
-###### Resistor 4.7k
-
-###### Box for mount din rail D6MG
-
-###### RJ45 Cat5 Dual Port Surface Mount Box
+ARDUINO UNO R3 - BASE
+W5100 - ETHERNET SHIELD
+SHT31 - TEMPERATURE AND HUMIDITY SENSOR
+DS18B20 - TEMPERATURE SENSOR
+LCD 1602 I2C - DYSPLAY
+RESISTOR 4.7K - PULL-UP RESISTOR
+D6MG - DIN RAIL MOUNTING ENCLOSURE
+RJ45 CAT5 DUAL PORT SURFACE MOUNT BOX
 
