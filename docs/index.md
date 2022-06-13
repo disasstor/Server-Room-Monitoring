@@ -1,93 +1,97 @@
 # What is this?
 ###### Server Room Monitoring - a device for monitoring the temperature and humidity of servers, server rooms and just for rooms where environmental control is needed.
 
-
 ------------
-
 ##### The differences between this system and Zabbuino in open source for the Arduino IDE. Anyone can customize the device to suit their needs. 
 ##### You can remove the display if display control is not needed, or change it to any other display by rewriting the code a bit. 
 ##### You can add or remove any sensor, for example, you can control the content of carbon dioxide or dust particles in the air, everything that you can implement on Arduino can be done here.
-
 ------------
-
 
 # Electronic circuit:
 ![Shema](circuit.png)
 
 # Components that I used:
-###### ARDUINO UNO R3 - BASE
+- ARDUINO UNO R3 - BASE
 
-###### ETHERNET SHIELD W5100 - EXTEND SHIELD FOR ARDUINO
+- ETHERNET SHIELD W5100 - EXTEND SHIELD FOR ARDUINO
 
-###### SHT31 - TEMPERATURE AND HUMIDITY SENSOR
+- SHT31 - TEMPERATURE AND HUMIDITY SENSOR
 
-###### DS18B20 - TEMPERATURE SENSOR
+- DS18B20 - TEMPERATURE SENSOR
 
-###### LCD 1602 I2C - DYSPLAY
+- LCD 1602 I2C - DYSPLAY
 
-###### RESISTOR 4.7K - PULL-UP RESISTOR
+- RESISTOR 4.7K - PULL-UP RESISTOR
 
-###### D6MG DIN RAIL MOUNTING ENCLOSURE - BOX FOR ARDUINO
+- D6MG DIN RAIL MOUNTING ENCLOSURE - BOX FOR ARDUINO
 
-###### RJ45 CAT5 DUAL PORT SURFACE MOUNT BOX - BOX FOR SENSORS
+- RJ45 CAT5 DUAL PORT SURFACE MOUNT BOX - BOX FOR SENSORS
 
 # System Settings:
-#define LCD_ADDRESS 0x3F         	  // i2c LCD address
-#define LCD_H 16                  	// number of horizontal cells
-#define LCD_V 2                   	// number of vertical cells
-#define SHT31_ADDRESS 0x44 		      // i2c address of SHT3X
-#define ONE_WIRE_BUS 2 			        // Pin Onewire (DT18B20) bus
-#define TEMPERATURE_PRECISION 10  	// DT18B20 temperature conversion accuracy
-#define MAX_COMMAND_LENGTH 32 	    // Maximum Zabbix command length
-#define MEASUREMENTDELTA 10000 	    // Sensor polling interval
-#define LCDINTERVAL 5000 		        // Display refresh interval
+```cpp
+#define LCD_ADDRESS 0x3F              // i2c LCD address
+#define LCD_H 16                      // number of horizontal cells
+#define LCD_V 2                       // number of vertical cells
+#define SHT31_ADDRESS 0x44            // i2c address of SHT3X
+#define ONE_WIRE_BUS 2                // Pin Onewire (DT18B20) bus
+#define TEMPERATURE_PRECISION 10      // DT18B20 temperature conversion accuracy
+#define MAX_COMMAND_LENGTH 32         // Maximum Zabbix command length
+#define MEASUREMENTDELTA 10000        // Sensor polling interval
+#define LCDINTERVAL 5000              // Display refresh interval
+```
+
+
 ------------
 ##### You'll need a scanner i2c to find the display and sht31 addresses
 ------------
-
-DeviceAddress addrsensdt[] = { 						              // OneWire sensor address array(you need to change the address to yours)
-  { 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00 },	  // Must be emty (0x00)
-  { 0x28, 0x66, 0x66, 0x83, 0x18, 0x20, 0x01, 0x43 },	  // Address of the first sensor
-  { 0x28, 0xC0, 0x69, 0x8C, 0x18, 0x20, 0x01, 0x58 },	  // Address of the second sensor
-  { 0x28, 0x2C, 0xBA, 0xC3, 0x18, 0x20, 0x01, 0x66 },	  // Address of the third sensor
-  { 0x28, 0x09, 0x0F, 0xA9, 0x18, 0x20, 0x01, 0x2D },	  // Address of the fourth sensor
-  { 0x28, 0x7E, 0x30, 0x83, 0x18, 0x20, 0x01, 0xB0 },	  // Address of the fifth sensor
+```cpp
+DeviceAddress addrsensdt[] = {                           // OneWire sensor address array(you need to change the address to yours)
+  { 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00 },	 // Must be emty (0x00)
+  { 0x28, 0x66, 0x66, 0x83, 0x18, 0x20, 0x01, 0x43 },	 // Address of the first sensor
+  { 0x28, 0xC0, 0x69, 0x8C, 0x18, 0x20, 0x01, 0x58 },	 // Address of the second sensor
+  { 0x28, 0x2C, 0xBA, 0xC3, 0x18, 0x20, 0x01, 0x66 },	 // Address of the third sensor
+  { 0x28, 0x09, 0x0F, 0xA9, 0x18, 0x20, 0x01, 0x2D },	 // Address of the fourth sensor
+  { 0x28, 0x7E, 0x30, 0x83, 0x18, 0x20, 0x01, 0xB0 },	 // Address of the fifth sensor
 };
+```
 ------------
 ##### You'll need scanner onewire to find ds18b20 addresses 
 ------------
 # Zabbix Settings:
+```cpp
 char ZabbizItemKey = 'GetData'      //Item key of zabbix host
+```
 ------------
 ##### Read more about item key here: https://www.zabbix.com/documentation/current/en/manual/config/items/item
 ------------
 
 # Network Settings:
-byte mac[] = { 0x00, 0x00, 0x00, 0x00, 0x00, 0x00 };		// Important! Change MAC address! It must be unique on your local network.
-IPAddress ip(192, 168, 0, 100);						              // Change IP address if you need.
-IPAddress gateway(192, 168, 0, 1);					            // Change GW if you need.
-IPAddress subnet(255, 255, 255, 0);					            // Change MASK if you need.
-EthernetServer server(10050);							              // Change port if you need.
-
+```cpp
+byte mac[] = { 0x00, 0x00, 0x00, 0x00, 0x00, 0x00 };    // Important! Change MAC address! It must be unique on your local network.
+IPAddress ip(192, 168, 0, 100);                         // Change IP address if you need.
+IPAddress gateway(192, 168, 0, 1);                      // Change GW if you need.
+IPAddress subnet(255, 255, 255, 0);                     // Change MASK if you need.
+EthernetServer server(10050);                           // Change port if you need.
+```
 
 
 
 
 # libraries that I used:
-###### SPI
+- SPI
 
-###### Ethernet
+- Ethernet
 
-###### OneWire
+- OneWire
 
-###### DallasTemperature
+- DallasTemperature
 
-###### LiquidCrystal_I2C
+- LiquidCrystal_I2C
 
-###### Wire
+- Wire
 
-###### SHT31
+- SHT31
 
-###### GyverTimer
+- GyverTimer
 
 
