@@ -1,11 +1,26 @@
 # What is this?
 ###### Server Room Monitoring - a device for monitoring the temperature and humidity of servers, server rooms and just for rooms where environmental control is needed.
 
+
 ------------
+
 ##### The differences between this system and Zabbuino in open source for the Arduino IDE. Anyone can customize the device to suit their needs. 
 ##### You can remove the display if display control is not needed, or change it to any other display by rewriting the code a bit. 
 ##### You can add or remove any sensor, for example, you can control the content of carbon dioxide or dust particles in the air, everything that you can implement on Arduino can be done here.
+
 ------------
+
+# How its work?
+------------
+##### Server Room Monitoring works as a passive zabbix agent. The Zabbix server polls the agent on a schedule, the agent generates data and sends it to the Zabbix server.
+------------
+```seq
+Zabbix Server->Server Room Monitoring:Send item key
+
+Note right of Server Room Monitoring: Recive key, \nif key is valid,\ngenerate sensors data
+
+Server Room Monitoring->Zabbix Server:Send sensors data
+```
 
 # Electronic circuit:
 ![Shema](circuit.png)
@@ -27,17 +42,19 @@
 
 - RJ45 CAT5 DUAL PORT SURFACE MOUNT BOX - BOX FOR SENSORS
 
+
+
 # System Settings:
 ```cpp
-#define LCD_ADDRESS 0x3F              // i2c LCD address
-#define LCD_H 16                      // number of horizontal cells
-#define LCD_V 2                       // number of vertical cells
-#define SHT31_ADDRESS 0x44            // i2c address of SHT3X
-#define ONE_WIRE_BUS 2                // Pin Onewire (DT18B20) bus
+#define LCD_ADDRESS 0x3F                        // i2c LCD address
+#define LCD_H 16                                        // number of horizontal cells
+#define LCD_V 2                                          // number of vertical cells
+#define SHT31_ADDRESS 0x44                   // i2c address of SHT3X
+#define ONE_WIRE_BUS 2                          // Pin Onewire (DT18B20) bus
 #define TEMPERATURE_PRECISION 10      // DT18B20 temperature conversion accuracy
-#define MAX_COMMAND_LENGTH 32         // Maximum Zabbix command length
-#define MEASUREMENTDELTA 10000        // Sensor polling interval
-#define LCDINTERVAL 5000              // Display refresh interval
+#define MAX_COMMAND_LENGTH 32     // Maximum Zabbix command length
+#define MEASUREMENTDELTA 10000      // Sensor polling interval
+#define LCDINTERVAL 5000                     // Display refresh interval
 ```
 
 
@@ -45,13 +62,13 @@
 ##### You'll need a scanner i2c to find the display and sht31 addresses
 ------------
 ```cpp
-DeviceAddress addrsensdt[] = {                           // OneWire sensor address array(you need to change the address to yours)
-  { 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00 },	 // Must be emty (0x00)
-  { 0x28, 0x66, 0x66, 0x83, 0x18, 0x20, 0x01, 0x43 },	 // Address of the first sensor
-  { 0x28, 0xC0, 0x69, 0x8C, 0x18, 0x20, 0x01, 0x58 },	 // Address of the second sensor
-  { 0x28, 0x2C, 0xBA, 0xC3, 0x18, 0x20, 0x01, 0x66 },	 // Address of the third sensor
-  { 0x28, 0x09, 0x0F, 0xA9, 0x18, 0x20, 0x01, 0x2D },	 // Address of the fourth sensor
-  { 0x28, 0x7E, 0x30, 0x83, 0x18, 0x20, 0x01, 0xB0 },	 // Address of the fifth sensor
+DeviceAddress addrsensdt[] = { 						              // OneWire sensor address array(you need to change the address to yours)
+  { 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00 },	  // Must be emty (0x00)
+  { 0x28, 0x66, 0x66, 0x83, 0x18, 0x20, 0x01, 0x43 },	  // Address of the first sensor
+  { 0x28, 0xC0, 0x69, 0x8C, 0x18, 0x20, 0x01, 0x58 },	  // Address of the second sensor
+  { 0x28, 0x2C, 0xBA, 0xC3, 0x18, 0x20, 0x01, 0x66 },	  // Address of the third sensor
+  { 0x28, 0x09, 0x0F, 0xA9, 0x18, 0x20, 0x01, 0x2D },	  // Address of the fourth sensor
+  { 0x28, 0x7E, 0x30, 0x83, 0x18, 0x20, 0x01, 0xB0 },	  // Address of the fifth sensor
 };
 ```
 ------------
@@ -59,7 +76,7 @@ DeviceAddress addrsensdt[] = {                           // OneWire sensor addre
 ------------
 # Zabbix Settings:
 ```cpp
-String ZabbizItemKey = "GetData"      //Item key of zabbix host
+char ZabbizItemKey = 'GetData'      //Item key of zabbix host
 ```
 ------------
 ##### Read more about item key here: https://www.zabbix.com/documentation/current/en/manual/config/items/item
@@ -67,11 +84,11 @@ String ZabbizItemKey = "GetData"      //Item key of zabbix host
 
 # Network Settings:
 ```cpp
-byte mac[] = { 0x00, 0x00, 0x00, 0x00, 0x00, 0x00 };    // Important! Change MAC address! It must be unique on your local network.
-IPAddress ip(192, 168, 0, 100);                         // Change IP address if you need.
-IPAddress gateway(192, 168, 0, 1);                      // Change GW if you need.
-IPAddress subnet(255, 255, 255, 0);                     // Change MASK if you need.
-EthernetServer server(10050);                           // Change port if you need.
+byte mac[] = { 0x00, 0x00, 0x00, 0x00, 0x00, 0x00 };		// Important! Change MAC address! It must be unique on your local network.
+IPAddress ip(192, 168, 0, 100);						              // Change IP address if you need.
+IPAddress gateway(192, 168, 0, 1);					            // Change GW if you need.
+IPAddress subnet(255, 255, 255, 0);					            // Change MASK if you need.
+EthernetServer server(10050);							              // Change port if you need.
 ```
 
 
