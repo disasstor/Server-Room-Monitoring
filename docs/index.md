@@ -14,11 +14,18 @@
 
 ##### Components that I used:
 -Arduino UNO R3
+
 -Ethernet shield w5100
+
 -SHT31
+
 -DS18B20
+
 -LCD 1602 i2c
+
 -Resistor 4.7k
+
 -Box for mount din rail D6MG
+
 -RJ45 Cat5 Dual Port Surface Mount Box
 
