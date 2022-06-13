@@ -31,3 +31,12 @@
 
 ###### RJ45 CAT5 DUAL PORT SURFACE MOUNT BOX - BOX FOR SENSORS
 
+# Based Settings:
+
+------------
+
+##### You'll need a scanner i2c to find the display and sht31 addresses
+##### and you will need scanner onewire to find ds18b20 addresses 
+
+------------
+
