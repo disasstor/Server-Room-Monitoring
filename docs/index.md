@@ -39,15 +39,15 @@
 
 # System Settings:
 ```cpp
-#define LCD_ADDRESS 0x3F                        // i2c LCD address
-#define LCD_H 16                                        // number of horizontal cells
-#define LCD_V 2                                          // number of vertical cells
-#define SHT31_ADDRESS 0x44                   // i2c address of SHT3X
-#define ONE_WIRE_BUS 2                          // Pin Onewire (DT18B20) bus
-#define TEMPERATURE_PRECISION 10      // DT18B20 temperature conversion accuracy
+#define LCD_ADDRESS 0x3F          // i2c LCD address
+#define LCD_H 16                  // number of horizontal cells
+#define LCD_V 2                   // number of vertical cells
+#define SHT31_ADDRESS 0x44        // i2c address of SHT3X
+#define ONE_WIRE_BUS 2            // Pin Onewire (DT18B20) bus
+#define TEMPERATURE_PRECISION 10  // DT18B20 temperature conversion accuracy
 #define MAX_COMMAND_LENGTH 32     // Maximum Zabbix command length
-#define MEASUREMENTDELTA 10000      // Sensor polling interval
-#define LCDINTERVAL 5000                     // Display refresh interval
+#define MEASUREMENTDELTA 10000    // Sensor polling interval
+#define LCDINTERVAL 5000          // Display refresh interval
 ```
 
 
@@ -55,7 +55,8 @@
 ##### You'll need a scanner i2c to find the display and sht31 addresses
 ------------
 ```cpp
-DeviceAddress addrsensdt[] = { 						              // OneWire sensor address array(you need to change the address to yours)
+// OneWire sensor address array(you need to change the address to yours)
+DeviceAddress addrsensdt[] = {
   { 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00 },	  // Must be emty (0x00)
   { 0x28, 0x66, 0x66, 0x83, 0x18, 0x20, 0x01, 0x43 },	  // Address of the first sensor
   { 0x28, 0xC0, 0x69, 0x8C, 0x18, 0x20, 0x01, 0x58 },	  // Address of the second sensor
@@ -69,7 +70,7 @@ DeviceAddress addrsensdt[] = { 						              // OneWire sensor address arr
 ------------
 # Zabbix Settings:
 ```cpp
-char ZabbizItemKey = 'GetData'      //Item key of zabbix host
+String ZabbizItemKey = "GetData"      //Item key of zabbix host
 ```
 ------------
 ##### Read more about item key here: https://www.zabbix.com/documentation/current/en/manual/config/items/item
