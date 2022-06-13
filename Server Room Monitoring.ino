@@ -9,15 +9,17 @@
 
 
 
-#define LCD_ADDRESS 0x3F 			// i2c адрес LCD
-#define LCD_H 16 					// количество горизонтальных ячеек
-#define LCD_V 2	 					// количество вертикальных ячеек
-#define SHT31_ADDRESS 0x44 			// i2c адрес SHT3X
-#define ONE_WIRE_BUS 2 				// Шина onewire DT18B20
-#define TEMPERATURE_PRECISION 10 	// Точность преобразования температуры DT18B20
-#define MAX_COMMAND_LENGTH 32 		// Максимальная длина команды Zabbix
-#define MEASUREMENTDELTA 10000 		// Интервал опроса датчиков
-#define LCDINTERVAL 5000 			// Интервал обновления дисплея
+#define LCD_ADDRESS 0x3F         	  // i2c LCD address
+#define LCD_H 16                  	// number of horizontal cells
+#define LCD_V 2                   	// number of vertical cells
+#define SHT31_ADDRESS 0x44 		      // i2c address of SHT3X
+#define ONE_WIRE_BUS 2 			        // Onewire DT18B20 bus
+#define TEMPERATURE_PRECISION 10  	// DT18B20 temperature conversion accuracy
+#define MAX_COMMAND_LENGTH 32 	    // Maximum Zabbix command length
+#define MEASUREMENTDELTA 10000 	    // Sensor polling interval
+#define LCDINTERVAL 5000 		        // Display refresh interval
+
+String ItemKey = "GetData"          // Key of Zabbix item. Read more about item keys here: https://www.zabbix.com/documentation/current/en/manual/config/items/item
 
 GTimer myTimer1(MS, LCDINTERVAL);
 OneWire oneWire(ONE_WIRE_BUS);
@@ -26,17 +28,17 @@ SHT31 sht;
 uint32_t start;
 uint32_t stop;
 
-LiquidCrystal_I2C lcd(LCD_ADDRESS, LCD_H, LCD_V); // i2c адрес LCD
+LiquidCrystal_I2C lcd(LCD_ADDRESS, LCD_H, LCD_V);
 
-byte mac[] = { 0x00, 0x00, 0x00, 0x00, 0x00, 0x00 };
-IPAddress ip(192, 168, 0, 100);
-IPAddress gateway(192, 168, 0, 1);
-IPAddress subnet(255, 255, 255, 0);
-EthernetServer server(10050);
+byte mac[] = { 0x00, 0x00, 0x00, 0x00, 0x00, 0x00 };		// Important! Change MAC address! It must be unique on your local network.
+IPAddress ip(192, 168, 0, 100);						              // Change IP address if you need.
+IPAddress gateway(192, 168, 0, 1);					            // Change GW if you need.
+IPAddress subnet(255, 255, 255, 0);					            // Change MASK if you need.
+EthernetServer server(10050);							              // Change port if you need.
 EthernetClient client;
 
 boolean alreadyConnected = false;
-String command; // Буфер команд Zabbix
+String command; 									                      // Zabbix command buffer
 unsigned int temperature[] = { 0, 0, 0, 0, 0, 0 };
 static unsigned long lcdcounter = 5000;
 int lcdflag = 0;
@@ -45,13 +47,13 @@ unsigned int humidity = 0;
 unsigned int voltage[] = { 0, 0, 0, 0 };
 unsigned int flagLCD = 0;
 
-DeviceAddress addrsensdt[] = { // Адреса датчиков DS18B20
-  { 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00 },
-  { 0x28, 0x66, 0x66, 0x83, 0x18, 0x20, 0x01, 0x43 },
-  { 0x28, 0xC0, 0x69, 0x8C, 0x18, 0x20, 0x01, 0x58 },
-  { 0x28, 0x2C, 0xBA, 0xC3, 0x18, 0x20, 0x01, 0x66 },
-  { 0x28, 0x09, 0x0F, 0xA9, 0x18, 0x20, 0x01, 0x2D },
-  { 0x28, 0x7E, 0x30, 0x83, 0x18, 0x20, 0x01, 0xB0 },
+DeviceAddress addrsensdt[] = {                        // OneWire sensor address array(you need to change the address to yours)
+  { 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00 },	// Must be emty (0x00)
+  { 0x28, 0x66, 0x66, 0x83, 0x18, 0x20, 0x01, 0x43 },	// Address of the first sensor
+  { 0x28, 0xC0, 0x69, 0x8C, 0x18, 0x20, 0x01, 0x58 },	// Address of the second sensor
+  { 0x28, 0x2C, 0xBA, 0xC3, 0x18, 0x20, 0x01, 0x66 },	// Address of the third sensor
+  { 0x28, 0x09, 0x0F, 0xA9, 0x18, 0x20, 0x01, 0x2D },	// Address of the fourth sensor
+  { 0x28, 0x7E, 0x30, 0x83, 0x18, 0x20, 0x01, 0xB0 },	// Address of the fifth sensor
 };
 
 void readsens() {
@@ -86,8 +88,8 @@ void readsens() {
     measurementiteration = measurementiteration + 1;
   }
 }
-
-void readsensSHT3x() { // Получаем данные с SHT3X
+// Get data from SHT3X
+void readsensSHT3x() {
   start = micros();
   sht.read();         // default = true/fast       slow = false
   stop = micros();
@@ -106,8 +108,8 @@ void readsensSHT3x() { // Получаем данные с SHT3X
     humidity = thumidity;
   }
 }
-
-void readsensdt(byte sensdtindex) { // Получаем данные с DS18B20
+// Get data from DS18B20
+void readsensdt(byte sensdtindex) {
   float ttemperature = sensdt.getTempC(addrsensdt[sensdtindex]);
   if (ttemperature == -127) {
     sensping[sensdtindex] = 0;
@@ -139,8 +141,8 @@ void readvoltages() {
     voltage[i] = 0;
   }
 }
-
-void readtcpstream(char character) { // Парсинг приходящих от заббикс данных
+// Parsing data coming from zabbix
+void readtcpstream(char character) {
   if (command.length() == MAX_COMMAND_LENGTH) {
     command = "";
   }
@@ -157,7 +159,7 @@ void readtcpstream(char character) { // Парсинг приходящих от
 //      Serial.print("RemoveCount: ");
 //      Serial.println((command.length() - command.indexOf('Z')));
 
-      command.remove(command.indexOf('Z'), (command.length() - command.indexOf('Z'))); // находим индекс символа Z в строке, вычитаем из длинны строки индекс Z, таким образом из строки command удаляем все, начиная с символа Z
+      command.remove(command.indexOf('Z'), (command.length() - command.indexOf('Z'))); // find the index of the character "Z" in the string, subtract the index "Z" from the length of the string, thus deleting everything from the command string, starting with the character "Z"
       Serial.print("Receive Data from Zabbix: ");
       Serial.println(command);
       zbxexecutecommand();
@@ -165,8 +167,8 @@ void readtcpstream(char character) { // Парсинг приходящих от
     command = "";
   }
 }
-
-void lcdprint() { // Вывод данных на экран
+// Display data
+void lcdprint() {
   if (myTimer1.isReady()) {
     //Serial.println("Timer LCD");
     lcdflag++;
@@ -221,22 +223,26 @@ void lcdprint() { // Вывод данных на экран
   }
 }
 
-void zbxexecutecommand() { // Сбор и отправка пакета данных в Заббикс
-  client.print("ZBXD\x01"); // Отправляем заголовок ZBXD\x01 первым пакетом
-  
-  if (command.equals("GetData")) { //Если приходящая от Заббикс команда равна GetData, выполнить цикл IF
+void zbxexecutecommand() { // Collecting and sending a data packet to Zabbix Server
+//<HEADER> - "ZBXD\x01" (5 байт)
+//<DATALEN> - data length (4 bytes or 8 bytes for large packet). 1 will be formatted as 01/00/00/00 (four bytes, 32 bit number in little-endian format) or 01/00/00/00/00/00/00/00 (eight bytes, 64 bit number in little-endian format) for large packet.
+//<RESERVED> - uncompressed data length (4 bytes or 8 bytes for large packet). 1 will be formatted as 01/00/00/00 (four bytes, 32 bit number in little-endian format) or 01/00/00/00/00/00/00/00 (eight bytes, 64 bit number in little-endian format) for large packet.
+// Read more about headers here: https://www.zabbix.com/documentation/current/ru/manual/appendix/protocols/header_datalen
+  client.print("ZBXD\x01"); // Send header "ZBXD\x01" first
+  // If the command coming from Zabbix is equal to ItemKey, execute "IF"
+  if (command.equals(ItemKey)) { 
     String StrSpacer = ",";
     String SendStrData = "";
     
-    for (int i = 0; i <= 5; i++) { // Собираем в цикле FOR строку с данными всех датчиков температуры
+    for (int i = 0; i <= 5; i++) { 														// Collects data from all temperature sensors into a string with a separator ","
       String TempStrData = temperature[i] + StrSpacer;
       SendStrData = SendStrData + TempStrData; 
     }
-    SendStrData = SendStrData + humidity; // Дописываем в строку данные датчика влажности
-    byte responseBytes [] = {(byte) SendStrData.length(), 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00}; // Собираем второй пакет данный для отправки в Заббикс
-    client.write(responseBytes, 8); // Отправляем второй пакет данных
-    client.print(SendStrData); // Отправляем сами данные в Заббикс
-    client.stop(); // Закрываем соединение
+    SendStrData = SendStrData + humidity; 													// Appends the humidity sensor data to the string
+    byte responseBytes [] = {(byte) SendStrData.length(), 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00}; // Save datalen
+    client.write(responseBytes, 8); 														// Send datalen to Zabbix Server
+    client.print(SendStrData); 															// Send data to Zabbix Server
+    client.stop(); 																	// Close connection
   } else { }
   alreadyConnected = false;
 }
@@ -246,8 +252,8 @@ void setup() {
   Serial.println("Server Room Monitoring 1.0");
   Serial.println("Initialize sensors...");
   Wire.begin();
-  sensdt.begin(); // Start DS18D20
-  sht.begin(SHT31_ADDRESS);
+  sensdt.begin(); 				    	// Start DS18D20
+  sht.begin(SHT31_ADDRESS); 		    	// Start SHT31_ADDRESS
   Wire.setClock(100000);
   uint16_t stat = sht.readStatus();
 
@@ -269,9 +275,9 @@ void setup() {
   server.begin();
   Serial.println("Initialize done");
 
-  lcd.init();                      // инициализация дисплея
-  lcd.backlight();                 // включение подсветки
-  lcd.clear();                     // очистка экрана
+  lcd.init();                      	// Display initialization
+  lcd.backlight();                  	// Turn on the backlight
+  lcd.clear();                     	// Screen cleaning
 }
 
 void loop() {
