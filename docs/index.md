@@ -14,7 +14,7 @@
 ------------
 ##### Server Room Monitoring works as a passive zabbix agent. The Zabbix server polls the agent on a schedule, the agent generates data and sends it to the Zabbix server.
 ------------
-```seq
+```mermaid
 Zabbix Server->Server Room Monitoring:Send item key
 
 Note right of Server Room Monitoring: Recive key, \nif key is valid,\ngenerate sensors data
