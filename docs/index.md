@@ -72,7 +72,7 @@ DeviceAddress addrsensdt[] = {
 String ItemKey = "GetData"      //Item key of zabbix host
 ```
 ------------
-##### [Read more about item key here](https://www.zabbix.com/documentation/current/en/manual/config/items/item)
+##### Read more about item key [here](https://www.zabbix.com/documentation/current/en/manual/config/items/item)
 ------------
 
 # Network Settings:
