@@ -12,6 +12,16 @@
 
 # How its work?
 ###### Server Room Monitoring works as a passive zabbix agent. The Zabbix server polls the agent on a schedule, the agent generates data and sends it to the Zabbix server.
+
+
+```sequence {theme="hand"}
+Andrew->China: Says Hello
+Note right of China: China thinks\nabout it
+China-->Andrew: How are you?
+Andrew->>China: I am good thanks!
+```
+
+
 <p align="center" width="100%">
 <img align="center" width="33%" src="diagram.png"> 
 </p>
