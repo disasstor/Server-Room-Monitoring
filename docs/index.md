@@ -15,11 +15,14 @@
 
 
 ```mermaid
+
 sequenceDiagram
+
     participant ZB as Zabbix Server 
     participant SRM as Server Room Monitoring
     ZB->>SRM: Send item key
     SRM->>ZB: Send sensors data   
+    
 ```
 
 
