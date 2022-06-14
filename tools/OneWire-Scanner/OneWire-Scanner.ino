@@ -1,6 +1,6 @@
 #include <OneWire.h>
 
-OneWire  ds(3);  // Connect your 1-wire device to pin 3
+OneWire  ds(2);  // Connect your 1-wire device to pin 2
 
 void setup(void) {
   Serial.begin(9600);
