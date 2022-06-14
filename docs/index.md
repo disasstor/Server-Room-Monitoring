@@ -14,12 +14,16 @@
 ###### Server Room Monitoring works as a passive zabbix agent. The Zabbix server polls the agent on a schedule, the agent generates data and sends it to the Zabbix server.
 
 
-```sequence {theme="hand"}
-Andrew->China: Says Hello
-Note right of China: China thinks\nabout it
-China-->Andrew: How are you?
-Andrew->>China: I am good thanks!
+```mermaid
+sequenceDiagram
+    participant ZB as Zabbix Server 
+    participant SRM as Server Room Monitoring
+    ZB->>SRM: Send item key
+    SRM->>ZB: Send sensors data   
 ```
+
+
+<br>
 
 
 <p align="center" width="100%">
