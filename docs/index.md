@@ -122,7 +122,7 @@ EthernetServer server(10050);                         // Change port if you need
     - Preprocessing:
         - Type: REGEX
         - Parameters:
-            - (\d+),(\d+),(\d+),(\d+),(\d+),(\d+),(\d+)'
+            - (\d+),(\d+),(\d+),(\d+),(\d+),(\d+),(\d+)
             - \7
 
 # libraries that I used:
