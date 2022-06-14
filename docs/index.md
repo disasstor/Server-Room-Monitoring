@@ -112,16 +112,22 @@ EthernetServer server(10050);                         // Change port if you need
 ------------
 
 3) Create [dependents items](https://www.zabbix.com/documentation/current/en/manual/config/items/itemtypes/dependent_items) with parameters:
-    * Item:
-        * Name: 'Air humidity in server room'
-        * Type: 'DEPENDENT'
-        * Key: 'humidity'
-        * Delay: '0'
-        * Units: '%'
-        * Description: 'Data from sensor SHT3X'
+    - Item:
+        - Name: 'Air humidity in server room'
+
+        - Type: 'DEPENDENT'
+
+        - Key: 'humidity'
+
+        - Delay: '0'
+
+        - Units: '%'
+
+        - Description: 'Data from sensor SHT3X'
     
     - Preprocessing:
         - Type: REGEX
+
         - Parameters:
             - '(\d+),(\d+),(\d+),(\d+),(\d+),(\d+),(\d+)'
             - '\7'
