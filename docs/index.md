@@ -89,11 +89,11 @@ EthernetServer server(10050);                         // Change port if you need
 ##### This is an example setup, if you want to rename host or element, key etc differently you can do that.
 ------------
 
-1) [Create host](https://www.zabbix.com/documentation/current/en/manual/config/hosts/host) with parameters:
+1) Create [host](https://www.zabbix.com/documentation/current/en/manual/config/hosts/host) with parameters:
 - Name: Server Room Monitoring
 - Interface: Agent, IP address Server Room Monitoring
 
-2) [Create item](https://www.zabbix.com/documentation/current/en/manual/config/items/item) with parameters:
+2) Create [item](https://www.zabbix.com/documentation/current/en/manual/config/items/item) with parameters:
 - Name: "Data"
 - Type: "Zabbix agent"
 - Key: "GetData"
@@ -110,7 +110,7 @@ EthernetServer server(10050);                         // Change port if you need
 ##### Dependent item and regular expressions are used to separate the parameters and pass each parameter to an individual item.
 ------------
 
-3) [Create dependents items](https://www.zabbix.com/documentation/current/en/manual/config/items/itemtypes/dependent_items) with parameters:
+3) Create [dependents items](https://www.zabbix.com/documentation/current/en/manual/config/items/itemtypes/dependent_items) with parameters:
 ###### Item:
 - Name: 'Air humidity in server room'
 - Type: DEPENDENT
@@ -122,8 +122,8 @@ EthernetServer server(10050);                         // Change port if you need
 ###### Preprocessing:
 - Type: REGEX
 - Parameters:
-> (\d+),(\d+),(\d+),(\d+),(\d+),(\d+),(\d+)'
-> \7
+-- (\d+),(\d+),(\d+),(\d+),(\d+),(\d+),(\d+)'
+-- \7
 
 # libraries that I used:
 - SPI
