@@ -99,7 +99,7 @@ EthernetServer server(10050);                         // Change port if you need
 - Type of information: "text"
 - Update interval: 10m
 
-#### Ok, now you can turn on the device and check if the data is being transferred. The data of all sensor data will come in a text format with a "," delimiter. For example: 46,23,24,25,26,24,25.
+#### Ok, now you can turn on the device and get data from Server Room Monitoring. The data of all sensor will come in a text format with a "," delimiter. For example: 46,23,24,25,26,24,25.
 ------------
 ##### The first parameter is humidity from the cxt31 sensor.
 ##### The second parameter is the temperature with cxt31.
