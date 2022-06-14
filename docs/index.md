@@ -86,7 +86,7 @@ EthernetServer server(10050);                         // Change port if you need
 
 # Zabbix Server Settings:
 ------------
-###### This is an example setup, if you want to rename host or element, key etc differently you can do that.
+##### This is an example setup, if you want to rename host or element, key etc differently you can do that.
 ------------
 
 1) [Create host](https://www.zabbix.com/documentation/current/en/manual/config/hosts/host) with parameters:
