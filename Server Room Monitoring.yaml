@@ -4,7 +4,7 @@ zabbix_export:
   groups:
     -
       uuid: 8d8596e2c14247879de394a7e0358a31
-      name: Серверная
+      name: Servers
   templates:
     -
       uuid: d78a05d04dbb41459889629d33b979a7
@@ -12,7 +12,7 @@ zabbix_export:
       name: 'Server Room Monitoring'
       groups:
         -
-          name: Серверная
+          name: Servers
       items:
         -
           uuid: 34740dab03fb42d286941f07343006b8
@@ -23,12 +23,12 @@ zabbix_export:
           value_type: TEXT
         -
           uuid: dfd93bb01a994fdaa0091c64b8015097
-          name: 'Влажность воздуха в серверной'
+          name: 'Air humidity in server room'
           type: DEPENDENT
           key: humidity
           delay: '0'
           units: '%'
-          description: 'Данные с датчика SHT3X'
+          description: 'Data from sensor SHT3X'
           preprocessing:
             -
               type: REGEX
@@ -43,16 +43,16 @@ zabbix_export:
               expression: 'avg(/Server Room Monitoring/humidity,4)>80'
               recovery_mode: RECOVERY_EXPRESSION
               recovery_expression: 'avg(/Server Room Monitoring/humidity,4)<60'
-              name: 'Влажность в серверной очень высокая'
+              name: 'Humidity in the server room is very high'
               priority: DISASTER
         -
           uuid: bd1ecc0bcc7641af8dcb26899fa6e262
-          name: 'Температура воздуха в серверной #1'
+          name: 'Air temperature in the server room #1'
           type: DEPENDENT
           key: temperature.0
           delay: '0'
           units: C
-          description: 'Данные с датчика SHT3X'
+          description: 'Data from sensor SHT3X'
           preprocessing:
             -
               type: REGEX
@@ -63,12 +63,12 @@ zabbix_export:
             key: GetData
         -
           uuid: 6b7a12d380524273afb639225acb4910
-          name: 'Температура воздуха в серверной #2'
+          name: 'Air temperature in the server room #2'
           type: DEPENDENT
           key: temperature.1
           delay: '0'
           units: C
-          description: 'Данные с датчика DS18B20'
+          description: 'Data from sensor DS18B20'
           preprocessing:
             -
               type: REGEX
@@ -79,12 +79,12 @@ zabbix_export:
             key: GetData
         -
           uuid: ec86a788d901459e826060a054710833
-          name: 'Температура воздуха в шкафу #1 (вверх)'
+          name: 'Air temperature in the server rack #1 (top)'
           type: DEPENDENT
           key: temperature.2
           delay: '0'
           units: C
-          description: 'Данные с датчика DS18B20'
+          description: 'Data from sensor DS18B20'
           preprocessing:
             -
               type: REGEX
@@ -99,23 +99,23 @@ zabbix_export:
               expression: 'avg(/Server Room Monitoring/temperature.2,4)>25'
               recovery_mode: RECOVERY_EXPRESSION
               recovery_expression: 'avg(/Server Room Monitoring/temperature.2,4)<20'
-              name: 'Температура воздуха в шкафу #1 (верх) очень высокая'
+              name: 'Air temperature in the server rack #1 (top) is very high'
               priority: DISASTER
             -
               uuid: b01d81ddde7e41feb32991f6b1baea42
               expression: 'avg(/Server Room Monitoring/temperature.2,4)<10'
               recovery_mode: RECOVERY_EXPRESSION
               recovery_expression: 'avg(/Server Room Monitoring/temperature.2,4)>12'
-              name: 'Температура воздуха в шкафу #1 (верх) очень низкая'
+              name: 'Air temperature in the server rack #1 (top) is very low'
               priority: DISASTER
         -
           uuid: 40c36de27b0e4d1198441109ef85b4ce
-          name: 'Температура воздуха в шкафу #1 (низ)'
+          name: 'Air temperature in the server rack #1 (bottom)'
           type: DEPENDENT
           key: temperature.3
           delay: '0'
           units: C
-          description: 'Данные с датчика DS18B20'
+          description: 'Data from sensor DS18B20'
           preprocessing:
             -
               type: REGEX
@@ -130,23 +130,23 @@ zabbix_export:
               expression: 'avg(/Server Room Monitoring/temperature.3,4)>25'
               recovery_mode: RECOVERY_EXPRESSION
               recovery_expression: 'avg(/Server Room Monitoring/temperature.3,4)<20'
-              name: 'Температура воздуха в шкафу #1 (низ) очень высокая'
+              name: 'Air temperature in the server rack #1 (bottom) is very high'
               priority: DISASTER
             -
               uuid: 051047e6eb214e21bd27189abff82857
               expression: 'avg(/Server Room Monitoring/temperature.3,4)<10'
               recovery_mode: RECOVERY_EXPRESSION
               recovery_expression: 'avg(/Server Room Monitoring/temperature.3,4)>12'
-              name: 'Температура воздуха в шкафу #1 (низ) очень низкая'
+              name: 'Air temperature in the server rack #1 (bottom) is very low'
               priority: DISASTER
         -
           uuid: 38cec642302a475996b9368ca27da0ad
-          name: 'Температура воздуха в шкафу #2 (вверх)'
+          name: 'Air temperature in the server rack #2 (top)'
           type: DEPENDENT
           key: temperature.4
           delay: '0'
           units: C
-          description: 'Данные с датчика DS18B20'
+          description: 'Data from sensor DS18B20'
           preprocessing:
             -
               type: REGEX
@@ -161,23 +161,23 @@ zabbix_export:
               expression: 'avg(/Server Room Monitoring/temperature.4,4)>25'
               recovery_mode: RECOVERY_EXPRESSION
               recovery_expression: 'avg(/Server Room Monitoring/temperature.4,4)<20'
-              name: 'Температура воздуха в шкафу #2 (верх) очень высокая'
+              name: 'Air temperature in the server rack #2 (top) is very high'
               priority: DISASTER
             -
               uuid: 512d2c4e8d824f4eb0dec63566506e6d
               expression: 'avg(/Server Room Monitoring/temperature.4,4)<10'
               recovery_mode: RECOVERY_EXPRESSION
               recovery_expression: 'avg(/Server Room Monitoring/temperature.4,4)>12'
-              name: 'Температура воздуха в шкафу #2 (верх) очень низкая'
+              name: 'Air temperature in the server rack #2 (top) is very low'
               priority: DISASTER
         -
           uuid: 83a11b24f4534b46a6d332a1fcb6ed98
-          name: 'Температура воздуха в шкафу #2 (низ)'
+          name: 'Air temperature in the server rack #2 (bottom)'
           type: DEPENDENT
           key: temperature.5
           delay: '0'
           units: C
-          description: 'Данные с датчика DS18B20'
+          description: 'Data from sensor DS18B20'
           preprocessing:
             -
               type: REGEX
@@ -192,14 +192,14 @@ zabbix_export:
               expression: 'avg(/Server Room Monitoring/temperature.5,4)>25'
               recovery_mode: RECOVERY_EXPRESSION
               recovery_expression: 'avg(/Server Room Monitoring/temperature.5,4)<20'
-              name: 'Температура воздуха в шкафу #2 (низ) очень высокая'
+              name: 'Air temperature in the server rack #2 (bottom) is very high'
               priority: DISASTER
             -
               uuid: c220e79401c547c6b7cc3379474dc84b
               expression: 'avg(/Server Room Monitoring/temperature.5,4)<10'
               recovery_mode: RECOVERY_EXPRESSION
               recovery_expression: 'avg(/Server Room Monitoring/temperature.5,4)>12'
-              name: 'Температура воздуха в шкафу #2 (низ) очень низкая'
+              name: 'Air temperature in the server rack #2 (bottom) is very low'
               priority: DISASTER
   triggers:
     -
@@ -207,12 +207,12 @@ zabbix_export:
       expression: 'avg(/Server Room Monitoring/temperature.0,4)>25 or avg(/Server Room Monitoring/temperature.1,4)>25'
       recovery_mode: RECOVERY_EXPRESSION
       recovery_expression: 'avg(/Server Room Monitoring/temperature.0,4)<20 or avg(/Server Room Monitoring/temperature.1,4)<20'
-      name: 'Температура в серверной очень высокая'
+      name: 'Air temperature in server room is very high'
       priority: DISASTER
     -
       uuid: bba7407f7be74ab1ae95cb054200fdb6
       expression: 'avg(/Server Room Monitoring/temperature.0,4)<10 or avg(/Server Room Monitoring/temperature.1,4)<10'
       recovery_mode: RECOVERY_EXPRESSION
       recovery_expression: 'avg(/Server Room Monitoring/temperature.0,4)>12 or avg(/Server Room Monitoring/temperature.1,4)>12'
-      name: 'Температура в серверной очень низкая'
+      name: 'Air temperature in server room is very low'
       priority: DISASTER
