@@ -20,7 +20,7 @@
 
 # Electronic circuit:
 
-<img align="center" width="33%" src="circuit.png">
+<img align="center" width="60%" src="circuit.png">
 
 <br>
 
