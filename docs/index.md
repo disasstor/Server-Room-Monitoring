@@ -72,7 +72,7 @@ DeviceAddress addrsensdt[] = {
 String ItemKey = "GetData"      //Item key of zabbix host
 ```
 ------------
-##### Read more about item key here: https://www.zabbix.com/documentation/current/en/manual/config/items/item
+##### [Read more about item key here](https://www.zabbix.com/documentation/current/en/manual/config/items/item)
 ------------
 
 # Network Settings:
@@ -85,16 +85,16 @@ EthernetServer server(10050);                         // Change port if you need
 ```
 
 # Zabbix Server Settings:
-1) Create host with parameters: //https://www.zabbix.com/documentation/current/en/manual/config/hosts/host
+1) [Create host](https://www.zabbix.com/documentation/current/en/manual/config/hosts/host) with parameters:
 - Name: your Room Name
 - Interface: Agent, IP address Server Room Monitoring in your network
-2) Create item with parameters: //https://www.zabbix.com/documentation/current/en/manual/config/items/item
+2) [Create item](https://www.zabbix.com/documentation/current/en/manual/config/items/item) with parameters:
 - Name: Data (for example)
 - Type: Zabbix agent(passive)
 - Key: Your item key (for example "GetData")
 - Type of information: text
 - Update interval: 10m (set how you needed)
-3) Create dependents items with parameters: //https://www.zabbix.com/documentation/current/en/manual/config/items/itemtypes/dependent_items
+3) [Create dependents items](https://www.zabbix.com/documentation/current/en/manual/config/items/itemtypes/dependent_items) with parameters:
 - Name: Humidity in the server room(for example)
 - 
 # libraries that I used:
