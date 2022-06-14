@@ -18,21 +18,21 @@
 ![Shema](circuit.png)
 
 # Components that I used:
-- ARDUINO UNO R3 - BASE
+- [ARDUINO UNO R3]() - BASE
 
-- ETHERNET SHIELD W5100 - EXTEND SHIELD FOR ARDUINO
+- [ETHERNET SHIELD W5100]() - EXTEND SHIELD FOR ARDUINO
 
-- SHT31 - TEMPERATURE AND HUMIDITY SENSOR
+- [SHT31]() - TEMPERATURE AND HUMIDITY SENSOR
 
-- DS18B20 - TEMPERATURE SENSOR
+- [DS18B20]() - TEMPERATURE SENSOR
 
-- LCD 1602 I2C - DYSPLAY
+- [LCD 1602 I2C]() - DYSPLAY
 
-- RESISTOR 4.7K - PULL-UP RESISTOR
+- [RESISTOR 4.7K]() - PULL-UP RESISTOR
 
-- D6MG DIN RAIL MOUNTING ENCLOSURE - BOX FOR ARDUINO
+- [D6MG DIN RAIL MOUNTING ENCLOSURE]() - BOX FOR ARDUINO
 
-- RJ45 CAT5 DUAL PORT SURFACE MOUNT BOX - BOX FOR SENSORS
+- [RJ45 CAT5 DUAL PORT SURFACE MOUNT BOX]() - BOX FOR SENSORS
 
 
 
@@ -90,15 +90,15 @@ EthernetServer server(10050);                         // Change port if you need
 ------------
 
 1) Create [host](https://www.zabbix.com/documentation/current/en/manual/config/hosts/host) with parameters:
-- Name: Server Room Monitoring
-- Interface: Agent, IP address Server Room Monitoring
+  - Name: Server Room Monitoring
+  - Interface: Agent, IP address Server Room Monitoring
 
 2) Create [item](https://www.zabbix.com/documentation/current/en/manual/config/items/item) with parameters:
-- Name: "Data"
-- Type: "Zabbix agent"
-- Key: "GetData"
-- Type of information: "text"
-- Update interval: 10m
+  - Name: "Data"
+  - Type: "Zabbix agent"
+  - Key: "GetData"
+  - Type of information: "text"
+  - Update interval: 10m
 
 ###### Ok, now you can turn on the device and get data from Server Room Monitoring. The data of all sensor will come in a text format with a "," delimiter.
 
@@ -111,35 +111,28 @@ EthernetServer server(10050);                         // Change port if you need
 ------------
 
 3) Create [dependents items](https://www.zabbix.com/documentation/current/en/manual/config/items/itemtypes/dependent_items) with parameters:
-###### Item:
-- Name: 'Air humidity in server room'
-- Type: DEPENDENT
-- Key: humidity
-- Delay: '0'
-- Units: '%'
-- Description: 'Data from sensor SHT3X'
-
-###### Preprocessing:
-- Type: REGEX
-- Parameters:
-- (\d+),(\d+),(\d+),(\d+),(\d+),(\d+),(\d+)'
-- \7
+    - Item:
+        - Name: 'Air humidity in server room'
+        - Type: DEPENDENT
+        - Key: humidity
+        - Delay: '0'
+        - Units: '%'
+        - Description: 'Data from sensor SHT3X'
+    
+    - Preprocessing:
+        - Type: REGEX
+        - Parameters:
+            - (\d+),(\d+),(\d+),(\d+),(\d+),(\d+),(\d+)'
+            - \7
 
 # libraries that I used:
-- SPI
-
-- Ethernet
-
-- OneWire
-
-- DallasTemperature
-
-- LiquidCrystal_I2C
-
-- Wire
-
-- SHT31
-
-- GyverTimer
+- [SPI]()
+- [Ethernet]()
+- [OneWire]()
+- [DallasTemperature]()
+- [LiquidCrystal_I2C]()
+- [Wire]()
+- [SHT31]()
+- [GyverTimer]()
 
 
