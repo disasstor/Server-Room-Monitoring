@@ -3,12 +3,11 @@
 
 
 ------------
-
 ##### The differences between this system and Zabbuino in open source for the Arduino IDE. Anyone can customize the device to suit their needs. 
 ##### You can remove the display if display control is not needed, or change it to any other display by rewriting the code a bit. 
 ##### You can add or remove any sensor, for example, you can control the content of carbon dioxide or dust particles in the air, everything that you can implement on Arduino can be done here.
-
 ------------
+
 
 # How its work?
 ###### Server Room Monitoring works as a passive zabbix agent. The Zabbix server polls the agent on a schedule, the agent generates data and sends it to the Zabbix server.
@@ -17,23 +16,17 @@
 # Electronic circuit:
 ![Shema](circuit.png)
 
+
 # Components that I used:
+
 - [ARDUINO UNO R3]() - BASE
-
 - [ETHERNET SHIELD W5100]() - EXTEND SHIELD FOR ARDUINO
-
 - [SHT31]() - TEMPERATURE AND HUMIDITY SENSOR
-
 - [DS18B20]() - TEMPERATURE SENSOR
-
 - [LCD 1602 I2C]() - DYSPLAY
-
 - [RESISTOR 4.7K]() - PULL-UP RESISTOR
-
 - [D6MG DIN RAIL MOUNTING ENCLOSURE]() - BOX FOR ARDUINO
-
 - [RJ45 CAT5 DUAL PORT SURFACE MOUNT BOX]() - BOX FOR SENSORS
-
 
 
 # System Settings:
@@ -64,6 +57,8 @@ DeviceAddress addrsensdt[] = {
   { 0x28, 0x7E, 0x30, 0x83, 0x18, 0x20, 0x01, 0xB0 },	  // Address of the fifth sensor
 };
 ```
+
+
 ------------
 ##### You'll need scanner onewire to find ds18b20 addresses 
 ------------
@@ -75,6 +70,7 @@ String ItemKey = "GetData"      //Item key of zabbix host
 ##### Read more about item key [here](https://www.zabbix.com/documentation/current/en/manual/config/items/item)
 ------------
 
+
 # Network Settings:
 ```cpp
 byte mac[] = { 0x00, 0x00, 0x00, 0x00, 0x00, 0x00 };  // Important! Change MAC address!
@@ -85,16 +81,19 @@ IPAddress subnet(255, 255, 255, 0);                   // Change MASK if you need
 EthernetServer server(10050);                         // Change port if you need.
 ```
 
+
 # Zabbix Server Settings:
 ------------
 ##### This is an example setup, if you want to rename host or element, key etc differently you can do that.
 ------------
 
 1) Create [host](https://www.zabbix.com/documentation/current/en/manual/config/hosts/host) with parameters:
+
   - Name: Server Room Monitoring
   - Interface: Agent, IP address Server Room Monitoring
 
 2) Create [item](https://www.zabbix.com/documentation/current/en/manual/config/items/item) with parameters:
+
   - Name: "Data"
   - Type: "Zabbix agent"
   - Key: "GetData"
@@ -112,27 +111,24 @@ EthernetServer server(10050);                         // Change port if you need
 ------------
 
 3) Create [dependents items](https://www.zabbix.com/documentation/current/en/manual/config/items/itemtypes/dependent_items) with parameters:
+
     - Item:
         - Name: 'Air humidity in server room'
-
         - Type: 'DEPENDENT'
-
         - Key: 'humidity'
-
         - Delay: '0'
-
         - Units: '%'
-
         - Description: 'Data from sensor SHT3X'
     
     - Preprocessing:
         - Type: REGEX
-
         - Parameters:
             - '(\d+),(\d+),(\d+),(\d+),(\d+),(\d+),(\d+)'
             - '\7'
 
+
 # libraries that I used:
+
 - [SPI]()
 - [Ethernet]()
 - [OneWire]()
