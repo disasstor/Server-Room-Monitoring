@@ -62,7 +62,7 @@ DeviceAddress addrsensdt[] = {
 ------------
 ##### You'll need scanner onewire to find ds18b20 addresses 
 ------------
-# Zabbix Settings:
+# Zabbix Agent Settings:
 ```cpp
 String ItemKey = "GetData"      //Item key of zabbix host
 ```
