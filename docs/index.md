@@ -108,7 +108,9 @@ EthernetServer server(10050);                         // Change port if you need
 1) Create [host](https://www.zabbix.com/documentation/current/en/manual/config/hosts/host) with parameters:
 
   - Name: Server Room Monitoring
-  - Interface: Agent, IP address Server Room Monitoring
+  - Interface: 
+    - Type: Agent
+    - IP: IP address Server Room Monitoring
 
 2) Create [item](https://www.zabbix.com/documentation/current/en/manual/config/items/item) with parameters:
 
