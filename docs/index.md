@@ -85,15 +85,27 @@ EthernetServer server(10050);                         // Change port if you need
 ```
 
 # Zabbix Server Settings:
+------------
+###### This is an example setup, if you want to name host , element , key etc differently you can do that.
+------------
+
 1) [Create host](https://www.zabbix.com/documentation/current/en/manual/config/hosts/host) with parameters:
-- Name: your Room Name
-- Interface: Agent, IP address Server Room Monitoring in your network
+- Name: Server Room Monitoring
+- Interface: Agent, IP address Server Room Monitoring
 2) [Create item](https://www.zabbix.com/documentation/current/en/manual/config/items/item) with parameters:
-- Name: Data (for example)
-- Type: Zabbix agent(passive)
-- Key: Your item key (for example "GetData")
-- Type of information: text
-- Update interval: 10m (set how you needed)
+- Name: "Data"
+- Type: "Zabbix agent"
+- Key: "GetData"
+- Type of information: "text"
+- Update interval: 10m
+
+#### Ok, now you can turn on the device and check if the data is being transferred. The data of all sensor data will come in a text format with a "," delimiter. For example: 46,23,24,25,26,24,25.
+------------
+##### The first parameter is humidity from the cxt31 sensor.
+##### The second parameter is the temperature with cxt31.
+##### The third - the first ds18b20 and so on.
+##### Dependent item and regular expressions are used to separate the parameters and pass each parameter to an individual item.
+------------
 3) [Create dependents items](https://www.zabbix.com/documentation/current/en/manual/config/items/itemtypes/dependent_items) with parameters:
 - Name: Humidity in the server room(for example)
 - 
