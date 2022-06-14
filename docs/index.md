@@ -13,7 +13,7 @@
 # How its work?
 ###### Server Room Monitoring works as a passive zabbix agent. The Zabbix server polls the agent on a schedule, the agent generates data and sends it to the Zabbix server.
 
-<img align="center" src="diagram.png"> 
+<img align="center" width="33%" src="diagram.png"> 
 
 
 <br>
