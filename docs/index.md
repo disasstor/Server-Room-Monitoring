@@ -103,15 +103,27 @@ EthernetServer server(10050);                         // Change port if you need
 ###### Ok, now you can turn on the device and get data from Server Room Monitoring. The data of all sensor will come in a text format with a "," delimiter.
 
 ------------
-##### Example: 46,23,24,25,26,24,25.
-##### The first parameter is humidity from the SHT31 sensor.
-##### The second parameter is the temperature with SHT31.
-##### The third - the first DS18B20 and so on.
+##### Example: 23,24,25,26,24,25,46.
+##### The first parameter is the temperature with SHT31.
+##### The second - the first DS18B20 and so on.
+##### The last parameter is humidity from the SHT31 sensor.
 ##### Dependent item and regular expressions are used to separate the parameters and pass each parameter to an individual item.
 ------------
 
 3) [Create dependents items](https://www.zabbix.com/documentation/current/en/manual/config/items/itemtypes/dependent_items) with parameters:
-- Name: Humidity in the server room(for example)
+###### Item:
+- Name: 'Air humidity in server room'
+- Type: DEPENDENT
+- Key: humidity
+- Delay: '0'
+- Units: '%'
+- Description: 'Data from sensor SHT3X'
+
+###### Preprocessing:
+- Type: REGEX
+- Parameters:
+> (\d+),(\d+),(\d+),(\d+),(\d+),(\d+),(\d+)'
+> \7
 
 # libraries that I used:
 - SPI
