@@ -8,14 +8,17 @@
 ##### You can add or remove any sensor, for example, you can control the content of carbon dioxide or dust particles in the air, everything that you can implement on Arduino can be done here.
 ------------
 
+<br>
 
 # How its work?
 ###### Server Room Monitoring works as a passive zabbix agent. The Zabbix server polls the agent on a schedule, the agent generates data and sends it to the Zabbix server.
 
+<br>
 
 # Electronic circuit:
 ![Shema](circuit.png)
 
+<br>
 
 # Components that I used:
 
@@ -28,6 +31,7 @@
 - [D6MG DIN RAIL MOUNTING ENCLOSURE]() - BOX FOR ARDUINO
 - [RJ45 CAT5 DUAL PORT SURFACE MOUNT BOX]() - BOX FOR SENSORS
 
+<br>
 
 # System Settings:
 ```cpp
@@ -46,6 +50,9 @@
 ------------
 ##### You'll need a scanner i2c to find the display and sht31 addresses
 ------------
+
+<br>
+
 ```cpp
 // OneWire sensor address array(you need to change the address to yours)
 DeviceAddress addrsensdt[] = {
@@ -62,6 +69,9 @@ DeviceAddress addrsensdt[] = {
 ------------
 ##### You'll need scanner onewire to find ds18b20 addresses 
 ------------
+
+<br>
+
 # Zabbix Agent Settings:
 ```cpp
 String ItemKey = "GetData"      //Item key of zabbix host
@@ -70,6 +80,7 @@ String ItemKey = "GetData"      //Item key of zabbix host
 ##### Read more about item key [here](https://www.zabbix.com/documentation/current/en/manual/config/items/item)
 ------------
 
+<br>
 
 # Network Settings:
 ```cpp
@@ -81,6 +92,7 @@ IPAddress subnet(255, 255, 255, 0);                   // Change MASK if you need
 EthernetServer server(10050);                         // Change port if you need.
 ```
 
+<br>
 
 # Zabbix Server Settings:
 ------------
@@ -110,6 +122,8 @@ EthernetServer server(10050);                         // Change port if you need
 ##### Dependent item and regular expressions are used to separate the parameters and pass each parameter to an individual item.
 ------------
 
+<br>
+
 3) Create [dependents items](https://www.zabbix.com/documentation/current/en/manual/config/items/itemtypes/dependent_items) with parameters:
 
     - Item:
@@ -126,6 +140,7 @@ EthernetServer server(10050);                         // Change port if you need
             - '(\d+),(\d+),(\d+),(\d+),(\d+),(\d+),(\d+)'
             - '\7'
 
+<br>
 
 # libraries that I used:
 
