@@ -159,7 +159,7 @@ EthernetServer server(10050);                         // Change port if you need
 
 3) Create [dependents items](https://www.zabbix.com/documentation/current/en/manual/config/items/itemtypes/dependent_items) with parameters:
 
-  - Item:
+  - Item#1:
     - Name: 'Air humidity in server room'
     - Type: 'DEPENDENT'
     - Key: 'humidity'
@@ -172,4 +172,30 @@ EthernetServer server(10050);                         // Change port if you need
     - Parameters: '(\d+),(\d+),(\d+),(\d+),(\d+),(\d+),(\d+)' '\7'
 
 
+  - Item#2:
+    - Name: 'Air temperature in server room'
+    - Type: 'DEPENDENT'
+    - Key: 'temperature.0'
+    - Delay: '0'
+    - Units: 'C'
+    - Description: 'Data from sensor SHT3X'
 
+  - Preprocessing:
+    - Type: REGEX
+    - Parameters: '(\d+),(\d+),(\d+),(\d+),(\d+),(\d+),(\d+)' '\1'
+
+  - Item#3:
+    - Name: 'Air temperature in server room'
+    - Type: 'DEPENDENT'
+    - Key: 'temperature.1'
+    - Delay: '0'
+    - Units: 'C'
+    - Description: 'Data from sensor DS18B20'
+
+  - Preprocessing:
+    - Type: REGEX
+    - Parameters: '(\d+),(\d+),(\d+),(\d+),(\d+),(\d+),(\d+)' '\2'
+  
+ ##### And so on
+ 
+ ###### You can see [my template]() to understand it.
