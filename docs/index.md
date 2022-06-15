@@ -196,6 +196,8 @@ EthernetServer server(10050);                         // Change port if you need
     - Type: REGEX
     - Parameters: '(\d+),(\d+),(\d+),(\d+),(\d+),(\d+),(\d+)' '\2'
   
- ##### And so on
- 
- ###### You can see [my template]() to understand it.
+##### And so on
+
+------------
+###### You can see [my template]() to understand it.
+------------
