@@ -1,17 +1,17 @@
 # What is this?
-###### Server Room Monitoring - a device for monitoring the temperature and humidity of servers, server rooms and just for rooms where environmental control is needed.
+##### Server Room Monitoring - a device for monitoring the temperature and humidity of servers, server rooms and just for rooms where environmental control is needed.
 
 
 ------------
-##### The differences between this system and Zabbuino in open source for the Arduino IDE. Anyone can customize the device to suit their needs. 
-##### You can remove the display if display control is not needed, or change it to any other display by rewriting the code a bit. 
-##### You can add or remove any sensor, for example, you can control the content of carbon dioxide or dust particles in the air, everything that you can implement on Arduino can be done here.
+###### The differences between this system and Zabbuino in open source for the Arduino IDE. Anyone can customize the device to suit their needs. 
+###### You can remove the display if display control is not needed, or change it to any other display by rewriting the code a bit. 
+###### You can add or remove any sensor, for example, you can control the content of carbon dioxide or dust particles in the air, everything that you can implement on Arduino can be done here.
 ------------
 
 <br>
 
 # How its work?
-###### Server Room Monitoring works as a passive zabbix agent. The Zabbix server polls the agent on a schedule, the agent generates data and sends it to the Zabbix server.
+##### Server Room Monitoring works as a passive zabbix agent. The Zabbix server polls the agent on a schedule, the agent generates data and sends it to the Zabbix server.
 
 
 
@@ -79,7 +79,7 @@
 
 
 ------------
-##### You'll need a scanner i2c to find the display and sht31 addresses
+###### You'll need a scanner i2c to find the display and sht31 addresses
 ------------
 
 <br>
@@ -98,7 +98,7 @@ DeviceAddress addrsensdt[] = {
 
 
 ------------
-##### You'll need scanner onewire to find ds18b20 addresses 
+###### You'll need scanner onewire to find ds18b20 addresses 
 ------------
 
 <br>
@@ -108,7 +108,7 @@ DeviceAddress addrsensdt[] = {
 String ItemKey = "GetData"      //Item key of zabbix host
 ```
 ------------
-##### Read more about item key [here](https://www.zabbix.com/documentation/current/en/manual/config/items/item)
+###### Read more about item key [here](https://www.zabbix.com/documentation/current/en/manual/config/items/item)
 ------------
 
 <br>
@@ -127,7 +127,7 @@ EthernetServer server(10050);                         // Change port if you need
 
 # Zabbix Server Settings:
 ------------
-##### This is an example setup, if you want to rename host or element, key etc differently you can do that.
+###### This is an example setup, if you want to rename host or element, key etc differently you can do that.
 ------------
 
 1) Create [host](https://www.zabbix.com/documentation/current/en/manual/config/hosts/host) with parameters:
@@ -145,14 +145,14 @@ EthernetServer server(10050);                         // Change port if you need
   - Type of information: "text"
   - Update interval: 10m
 
-###### Ok, now you can turn on the device and get data from Server Room Monitoring. The data of all sensor will come in a text format with a "," delimiter.
+##### Ok, now you can turn on the device and get data from Server Room Monitoring. The data of all sensor will come in a text format with a "," delimiter.
 
 ------------
-##### Example data string: 23,24,25,26,24,25,46.
-##### The first parameter is the temperature with SHT31.
-##### The second - the first DS18B20 and so on.
-##### The last parameter is humidity from the SHT31 sensor.
-##### Dependent item and regular expressions are used to separate the parameters and pass each parameter to an individual item.
+###### Example data string: 23,24,25,26,24,25,46.
+###### The first parameter is the temperature with SHT31.
+###### The second - the first DS18B20 and so on.
+###### The last parameter is humidity from the SHT31 sensor.
+###### Dependent item and regular expressions are used to separate the parameters and pass each parameter to an individual item.
 ------------
 
 <br>
