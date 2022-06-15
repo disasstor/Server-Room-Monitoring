@@ -45,7 +45,24 @@
 - [D6MG DIN RAIL MOUNTING ENCLOSURE]() - BOX FOR ARDUINO
 - [RJ45 CAT5 DUAL PORT SURFACE MOUNT BOX]() - BOX FOR SENSORS
 
+
 <br>
+
+
+# libraries that I used:
+
+- [SPI]()
+- [Ethernet]()
+- [OneWire]()
+- [DallasTemperature]()
+- [LiquidCrystal_I2C]()
+- [Wire]()
+- [SHT31]()
+- [GyverTimer]()
+
+
+<br>
+
 
 # System Settings:
 ```cpp
@@ -154,17 +171,5 @@ EthernetServer server(10050);                         // Change port if you need
     - Type: REGEX
     - Parameters: '(\d+),(\d+),(\d+),(\d+),(\d+),(\d+),(\d+)' '\7'
 
-<br>
-
-# libraries that I used:
-
-- [SPI]()
-- [Ethernet]()
-- [OneWire]()
-- [DallasTemperature]()
-- [LiquidCrystal_I2C]()
-- [Wire]()
-- [SHT31]()
-- [GyverTimer]()
 
 
