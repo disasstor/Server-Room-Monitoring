@@ -21,7 +21,7 @@
 
 
 <p align="center" width="100%">
-<img align="center" width="33%" src="img/diagram.png"> 
+<img width="33%" src="img/diagram.png"> 
 </p>
 
 <br>
@@ -29,7 +29,7 @@
 # Electronic circuit:
 
 <p align="center" width="100%">
-<img align="center" width="60%" src="img/circuit.png">
+<img width="60%" src="img/circuit.png">
 </p>
 
 <br>
@@ -204,3 +204,13 @@ EthernetServer server(10050);                         // Change port if you need
 ------------
 ###### You can see [my template](https://github.com/disasstor/Server-Room-Monitoring/blob/2dcd5e67909eaa3db8a8260687d5095f5ebabb1c/Server%20Room%20Monitoring.yaml) to understand it.
 ------------
+
+
+# Install components to boxes
+
+###### Pinout of mounting boxes
+
+
+<p align="center" width="100%">
+<img width="60%" src="img/pinout-of-mounting-boxes.png">
+</p>
