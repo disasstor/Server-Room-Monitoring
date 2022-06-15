@@ -49,7 +49,7 @@
 <br>
 
 
-# libraries that I used:
+# Libraries that I used:
 
 - [SPI]()
 - [Ethernet]()
