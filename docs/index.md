@@ -21,7 +21,7 @@
 
 
 <p align="center" width="100%">
-<img align="center" width="33%" src="diagram.png"> 
+<img align="center" width="33%" src="img/diagram.png"> 
 </p>
 
 <br>
@@ -29,7 +29,7 @@
 # Electronic circuit:
 
 <p align="center" width="100%">
-<img align="center" width="60%" src="circuit.png">
+<img align="center" width="60%" src="img/circuit.png">
 </p>
 
 <br>
