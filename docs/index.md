@@ -171,6 +171,7 @@ EthernetServer server(10050);                         // Change port if you need
     - Type: REGEX
     - Parameters: '(\d+),(\d+),(\d+),(\d+),(\d+),(\d+),(\d+)' '\7'
 
+<br>
 
   - Item#2:
     - Name: 'Air temperature in server room'
@@ -183,6 +184,8 @@ EthernetServer server(10050);                         // Change port if you need
   - Preprocessing:
     - Type: REGEX
     - Parameters: '(\d+),(\d+),(\d+),(\d+),(\d+),(\d+),(\d+)' '\1'
+
+<br>
 
   - Item#3:
     - Name: 'Air temperature in server room'
