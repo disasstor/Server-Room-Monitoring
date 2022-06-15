@@ -199,5 +199,5 @@ EthernetServer server(10050);                         // Change port if you need
 ##### And so on
 
 ------------
-###### You can see [my template]() to understand it.
+###### You can see [my template](../Server Room Monitoring.yaml) to understand it.
 ------------
