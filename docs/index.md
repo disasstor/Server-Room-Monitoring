@@ -208,14 +208,11 @@ EthernetServer server(10050);                         // Change port if you need
 <br>
 
 # Install components to sensor boxes
-
-##### Make wiring and install sensors in the box
-
-###### First step:
-###### We need to make wiring and install the sensor in the box, need to make 5pc.
+##### First step:
+##### We need to make wiring and install the sensor in the box, need to make 5pc.
 <p float="left">
-  <img src="img/RJ45-WIRRING.png" width="33%" alt="Made with Angular" title="Angular" hspace="20"/>
-  <img src="img/RJ45-OTHER.png" width="33%" alt="Made with Angular" title="Angular" hspace="20"/> 
+  <img src="img/RJ45-WIRRING.png" width="33%" alt="RJ45 wiring" title="RJ45 wiring" hspace="20"/>
+  <img src="img/RJ45-OTHER.png" width="33%" alt="RJ45 install DS18B20" title="RJ45 install DS18B20" hspace="20"/> 
 </p>
 
 <!--
