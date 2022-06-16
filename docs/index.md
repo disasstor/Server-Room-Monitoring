@@ -205,12 +205,40 @@ EthernetServer server(10050);                         // Change port if you need
 ###### You can see [my template](https://github.com/disasstor/Server-Room-Monitoring/blob/2dcd5e67909eaa3db8a8260687d5095f5ebabb1c/Server%20Room%20Monitoring.yaml) to understand it.
 ------------
 
+<br>
 
-# Install components to boxes
-
-###### Pinout of mounting boxes
+# Install components to sensor boxes
 
 
+
+##### Made the pins parallel for the onewire bus
+------------
+###### Do this for all double boxes
+------------
+<p align="left" width="100%">
+<img width="33%" src="img/RJ45-WIRRING.png">
+</p>
+
+
+##### Making the first box wiring
+<p align="left" width="100%">
+<img width="33%" src="img/RJ45-FIRST.png">
+</p>
+
+
+##### making the last box wiring
+<p align="left" width="100%">
+<img width="33%" src="img/RJ45-LAST.png">
+</p>
+
+
+##### making the other box wiring
+<p align="left" width="100%">
+<img width="33%" src="img/RJ45-OTHER.png">
+</p>
+
+
+##### Pinout of mounting boxes
 <p align="center" width="100%">
 <img width="60%" src="img/pinout-of-mounting-boxes.png">
 </p>
