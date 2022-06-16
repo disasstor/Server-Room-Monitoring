@@ -26,7 +26,7 @@
 # Electronic circuit:
 
 <p float="left">
-  <img width="60%" src="img/circuit.png">
+  <img width="66%" src="img/circuit.png">
 </p>
 
 <br>
@@ -271,7 +271,7 @@ EthernetServer server(10050);                         // Change port if you need
 
 ##### The result you should have is:
 <p float="left">
-  <img src="img/pinout-of-mounting-boxes.png" width="60%" alt="Pinout RJ45 Mounting Boxes" title="Pinout RJ45 Mounting Boxes" hspace="20">
+  <img src="img/pinout-of-mounting-boxes.png" width="66%" alt="Pinout RJ45 Mounting Boxes" title="Pinout RJ45 Mounting Boxes" hspace="20">
 </p>
 
 
