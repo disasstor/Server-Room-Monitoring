@@ -51,14 +51,14 @@
 
 # Libraries that I used:
 
-- [SPI]()
-- [Ethernet]()
-- [OneWire]()
-- [DallasTemperature]()
-- [LiquidCrystal_I2C]()
-- [Wire]()
-- [SHT31]()
-- [GyverTimer]()
+- [SPI](https://www.arduino.cc/reference/en/language/functions/communication/spi/)
+- [Ethernet](https://www.arduino.cc/reference/en/libraries/ethernet/)
+- [OneWire](https://www.arduino.cc/reference/en/libraries/onewire/)
+- [DallasTemperature](https://www.arduino.cc/reference/en/libraries/dallastemperature/)
+- [LiquidCrystal_I2C](https://github.com/johnrickman/LiquidCrystal_I2C)
+- [Wire](https://www.arduino.cc/reference/en/language/functions/communication/wire/)
+- [SHT31](https://github.com/RobTillaart/Arduino/tree/master/libraries/SHT31)
+- [GyverTimer](https://github.com/GyverLibs/GyverTimer)
 
 
 <br>
