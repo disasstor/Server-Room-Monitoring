@@ -20,16 +20,16 @@
 <br>
 
 
-<p align="center" width="100%">
-<img width="33%" src="img/diagram.png"> 
+<p float="left">
+  <img width="33%" src="img/diagram.png"> 
 </p>
 
 <br>
 
 # Electronic circuit:
 
-<p align="center" width="100%">
-<img width="60%" src="img/circuit.png">
+<p float="left">
+  <img width="60%" src="img/circuit.png">
 </p>
 
 <br>
@@ -209,53 +209,30 @@ EthernetServer server(10050);                         // Change port if you need
 
 # Install components to sensor boxes
 ##### First step:
-##### We need to make wiring and install the sensor in the box, need to make 5pc.
+##### We need to make wiring and install the sensor in the box, you need to make 5 pieces, these will be blanks.
 <p float="left">
   <img src="img/RJ45-WIRRING.png" width="33%" alt="RJ45 wiring" title="RJ45 wiring" hspace="20"/>
   <img src="img/RJ45-OTHER.png" width="33%" alt="RJ45 install DS18B20" title="RJ45 install DS18B20" hspace="20"/> 
 </p>
 
-<!--
-  <img align="left"  width="33%" src="img/RJ45-WIRRING.png">
-  <br clear="left"/>
-  <h5>First step:</h5>
-  <h5>Made the pins parallel for the onewire bus</h5>
-  <h5>Do this for all double boxes</h5>
 
-  <img align="right" width="33%" src="img/RJ45-OTHER.png">
-  <br clear="right"/>
-  <h5>Second step:</h5>
-  <h5>Install DS18B20 to box</h5>
-  <h5>Do this for all double boxes</h5>
-
-
-
-
-
-<p align="center" width="100%">
-  
-  <h5></h5>
-  <img width="33%" src="img/RJ45-FIRST.png">
+##### Second step:
+##### Install SHT31 in first box
+<p float="left">
+  <img src="img/RJ45-FIRST.png" width="33%" alt="RJ45 wiring" title="RJ45 wiring" hspace="20"/>
 </p>
 
 
-<p align="left" width="100%">
-  <h5>Making the last box wiring</h5>
-  <img width="33%" src="img/RJ45-LAST.png">
+##### Third step:
+##### Install pull-up resistor in last box
+<p float="left">
+  <img src="img/RJ45-LAST.png" width="33%" alt="RJ45 wiring" title="RJ45 wiring" hspace="20"/>
 </p>
 
 
-
-<p align="left" width="100%">
-<img width="33%" src="img/RJ45-OTHER.png">
-</p>
-
-
--->
-
-##### Pinout of mounting boxes
-<p align="center" width="100%">
-<img width="60%" src="img/pinout-of-mounting-boxes.png">
+##### The result you should have is:
+<p float="left">
+  <img src="img/pinout-of-mounting-boxes.png" width="60%" alt="Pinout RJ45 Mounting Boxes" title="Pinout RJ45 Mounting Boxes" hspace="20">
 </p>
 
 
