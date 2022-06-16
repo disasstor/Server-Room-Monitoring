@@ -209,36 +209,58 @@ EthernetServer server(10050);                         // Change port if you need
 
 # Install components to sensor boxes
 
+##### Make wiring and install sensors in the box
+
+###### First step:
+###### We need to make wiring and install the sensor in the box, need to make 5pc.
+<p float="left">
+  <img src="img/RJ45-WIRRING.png" width="33%" alt="Made with Angular" title="Angular" hspace="20"/>
+  <img src="img/RJ45-OTHER.png" width="33%" alt="Made with Angular" title="Angular" hspace="20"/> 
+</p>
+
+<!--
+  <img align="left"  width="33%" src="img/RJ45-WIRRING.png">
+  <br clear="left"/>
+  <h5>First step:</h5>
+  <h5>Made the pins parallel for the onewire bus</h5>
+  <h5>Do this for all double boxes</h5>
+
+  <img align="right" width="33%" src="img/RJ45-OTHER.png">
+  <br clear="right"/>
+  <h5>Second step:</h5>
+  <h5>Install DS18B20 to box</h5>
+  <h5>Do this for all double boxes</h5>
 
 
-##### Made the pins parallel for the onewire bus
-------------
-###### Do this for all double boxes
-------------
-<p align="left" width="100%">
-<img width="33%" src="img/RJ45-WIRRING.png">
+
+
+
+<p align="center" width="100%">
+  
+  <h5></h5>
+  <img width="33%" src="img/RJ45-FIRST.png">
 </p>
 
 
-##### Making the first box wiring
 <p align="left" width="100%">
-<img width="33%" src="img/RJ45-FIRST.png">
+  <h5>Making the last box wiring</h5>
+  <img width="33%" src="img/RJ45-LAST.png">
 </p>
 
 
-##### making the last box wiring
-<p align="left" width="100%">
-<img width="33%" src="img/RJ45-LAST.png">
-</p>
 
-
-##### making the other box wiring
 <p align="left" width="100%">
 <img width="33%" src="img/RJ45-OTHER.png">
 </p>
 
 
+-->
+
 ##### Pinout of mounting boxes
 <p align="center" width="100%">
 <img width="60%" src="img/pinout-of-mounting-boxes.png">
 </p>
+
+
+<img align="center" src="https://cloud.githubusercontent.com/assets/532272/21507867/3376e9fe-cc4a-11e6-9350-7ec4f680da36.gif">
+
