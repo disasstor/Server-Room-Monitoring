@@ -5,7 +5,7 @@
 ------------
 ###### The differences between this system and Zabbuino in open source for the Arduino IDE. Anyone can customize the device to suit their needs. 
 ###### You can remove the display if display control is not needed, or change it to any other display by rewriting the code a bit. 
-###### You can add or remove any sensor, for example, you can control the content of carbon dioxide or dust particles in the air, everything that you can implement on Arduino can be done here.
+###### You can add or remove any sensor, for example, you can control the content of carbon dioxide or dust particles in the air, everything that you can implement on Arduino.
 ------------
 
 <br>
@@ -44,7 +44,7 @@
 - [RESISTOR 4.7K]() - PULL-UP RESISTOR
 - [D6MG DIN RAIL MOUNTING ENCLOSURE]() - BOX FOR ARDUINO
 - [RJ45 CAT5 DUAL PORT SURFACE MOUNT BOX]() - BOX FOR SENSORS
-
+- [RJ45 CAT5 SINGLE PORT SURFACE MOUNT BOX]() - BOX FOR CONNECTING SENSORS TO ARDUINO
 
 <br>
 
@@ -209,7 +209,9 @@ EthernetServer server(10050);                         // Change port if you need
 
 # Install components to sensor boxes
 ##### First step:
-##### We need to make wiring and install the sensor in the box, you need to make 5 pieces, these will be blanks.
+------------
+###### We need to make wiring and install the sensor in the box, you need to make 5 pieces, these will be blanks.
+------------
 <p float="left">
   <img src="img/RJ45-WIRRING.png" width="33%" alt="RJ45 wiring" title="RJ45 wiring" hspace="20"/>
   <img src="img/RJ45-OTHER.png" width="33%" alt="RJ45 install DS18B20" title="RJ45 install DS18B20" hspace="20"/> 
@@ -217,14 +219,18 @@ EthernetServer server(10050);                         // Change port if you need
 
 
 ##### Second step:
-##### Install SHT31 in first box
+------------
+###### Install SHT31 in first box
+------------
 <p float="left">
   <img src="img/RJ45-FIRST.png" width="33%" alt="RJ45 wiring" title="RJ45 wiring" hspace="20"/>
 </p>
 
 
 ##### Third step:
-##### Install pull-up resistor in last box
+------------
+###### Install pull-up resistor in last box
+------------
 <p float="left">
   <img src="img/RJ45-LAST.png" width="33%" alt="RJ45 wiring" title="RJ45 wiring" hspace="20"/>
 </p>
