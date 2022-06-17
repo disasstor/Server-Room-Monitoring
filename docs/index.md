@@ -93,30 +93,42 @@
 - [SHT31](https://github.com/RobTillaart/Arduino/tree/master/libraries/SHT31)
 - [GyverTimer](https://github.com/GyverLibs/GyverTimer)
 
-
 <br>
 
-
 # System Settings:
+###### Setting LCD 1602 or similar (2004 etc)
+###### LCD_ADDRESS - put your address of display
+###### LCD_H - put your number of horizontal screen characters
+###### LCD_V - put your number of vertical screen characters
 ```cpp
-#define LCD_ADDRESS 0x3F          // i2c LCD address
-#define LCD_H 16                  // number of horizontal cells
-#define LCD_V 2                   // number of vertical cells
+#define LCD_ADDRESS 0x3F          // i2c address of display
+#define LCD_H 16                  // number of horizontal screen characters
+#define LCD_V 2                   // number of vertical screen characters
+```
+###### SHT3X settings:
+###### SHT31_ADDRESS - put your address of SHT31
+```cpp
 #define SHT31_ADDRESS 0x44        // i2c address of SHT3X
+```
+###### OneWire settings:
+###### ONE_WIRE_BUS - put your arduino number of pin where OneWire is connected
+```cpp
 #define ONE_WIRE_BUS 2            // Pin Onewire (DT18B20) bus
-#define TEMPERATURE_PRECISION 10  // DT18B20 temperature conversion accuracy
-#define MAX_COMMAND_LENGTH 32     // Maximum Zabbix command length
+```
+###### Intervals settings:
+###### MEASUREMENTDELTA - sensor polling interval
+###### LCDINTERVAL - display refresh interval
+```cpp
 #define MEASUREMENTDELTA 10000    // Sensor polling interval
 #define LCDINTERVAL 5000          // Display refresh interval
 ```
-
-
 ------------
 ###### You'll need a [Scanner I<sup>2</sup>C](https://github.com/disasstor/Server-Room-Monitoring/tree/main/tools/I2C-Scanner) to find the display and sht31 addresses
 ------------
 
 <br>
 
+###### DeviceAddress - put your address of ds18b20
 ```cpp
 // OneWire sensor address array(you need to change the address to yours)
 DeviceAddress addrsensdt[] = {
@@ -137,6 +149,7 @@ DeviceAddress addrsensdt[] = {
 <br>
 
 # Zabbix Agent Settings:
+###### ItemKey - put your key
 ```cpp
 String ItemKey = "GetData"      //Item key of zabbix host
 ```
@@ -147,6 +160,8 @@ String ItemKey = "GetData"      //Item key of zabbix host
 <br>
 
 # Network Settings:
+###### Сonfigure the network settings to be correct for your local network
+###### Important! Change MAC address! MAC address must be unique on your local network.
 ```cpp
 byte mac[] = { 0x00, 0x00, 0x00, 0x00, 0x00, 0x00 };  // Important! Change MAC address!
                                                       // MAC address must be unique on your local network.
