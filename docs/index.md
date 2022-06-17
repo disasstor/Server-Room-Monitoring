@@ -110,6 +110,9 @@
 ```cpp
 #define SHT31_ADDRESS 0x44        // i2c address of SHT3X
 ```
+------------
+###### You'll need a [Scanner I<sup>2</sup>C](https://github.com/disasstor/Server-Room-Monitoring/tree/main/tools/I2C-Scanner) to find the display and sht31 addresses
+------------
 ###### OneWire settings:
 ###### ONE_WIRE_BUS - put your arduino number of pin where OneWire is connected
 ```cpp
@@ -122,9 +125,6 @@
 #define MEASUREMENTDELTA 10000    // Sensor polling interval
 #define LCDINTERVAL 5000          // Display refresh interval
 ```
-------------
-###### You'll need a [Scanner I<sup>2</sup>C](https://github.com/disasstor/Server-Room-Monitoring/tree/main/tools/I2C-Scanner) to find the display and sht31 addresses
-------------
 
 <br>
 
@@ -140,8 +140,6 @@ DeviceAddress addrsensdt[] = {
   { 0x28, 0x7E, 0x30, 0x83, 0x18, 0x20, 0x01, 0xB0 },	  // Address of the fifth sensor
 };
 ```
-
-
 ------------
 ###### You'll need [Scanner OneWire](https://github.com/disasstor/Server-Room-Monitoring/tree/main/tools/OneWire-Scanner) to find ds18b20 addresses 
 ------------
