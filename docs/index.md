@@ -112,7 +112,7 @@
 
 
 ------------
-###### You'll need a scanner i2c to find the display and sht31 addresses
+###### You'll need a [Scanner I<sup>2</sup>C](https://github.com/disasstor/Server-Room-Monitoring/tree/main/tools/I2C-Scanner) to find the display and sht31 addresses
 ------------
 
 <br>
@@ -131,7 +131,7 @@ DeviceAddress addrsensdt[] = {
 
 
 ------------
-###### You'll need scanner onewire to find ds18b20 addresses 
+###### You'll need [Scanner OneWire](https://github.com/disasstor/Server-Room-Monitoring/tree/main/tools/OneWire-Scanner) to find ds18b20 addresses 
 ------------
 
 <br>
