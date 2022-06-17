@@ -192,6 +192,8 @@ EthernetServer server(10050);                         // Change port if you need
     - Type: Agent
     - IP: IP address Server Room Monitoring
 
+<br>
+
 2) Create [item](https://www.zabbix.com/documentation/current/en/manual/config/items/item) with parameters:
 
   - Name: "Data"
