@@ -1,5 +1,5 @@
 # What is this?
-##### Server Room Monitoring - a device for monitoring the temperature and humidity of servers, server rooms and just for rooms where environmental control is needed.
+##### Server Room Monitoring - a device for monitoring temperature and humidity of servers, server rooms and just for rooms where environmental control is needed.
 
 
 ------------
@@ -160,7 +160,7 @@ EthernetServer server(10050);                         // Change port if you need
 
 # Zabbix Server Settings:
 ------------
-###### This is an example setup, if you want to rename host or element, key etc differently you can do that.
+###### This is an example setup.
 ------------
 
 1) Create [host](https://www.zabbix.com/documentation/current/en/manual/config/hosts/host) with parameters:
