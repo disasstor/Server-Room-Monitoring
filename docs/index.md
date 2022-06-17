@@ -105,6 +105,9 @@
 #define LCD_H 16                  // number of horizontal screen characters
 #define LCD_V 2                   // number of vertical screen characters
 ```
+
+<br>
+
 ###### SHT3X settings:
 ###### SHT31_ADDRESS - put your address of SHT31
 ```cpp
@@ -113,11 +116,17 @@
 ------------
 ###### You'll need a [Scanner I<sup>2</sup>C](https://github.com/disasstor/Server-Room-Monitoring/tree/main/tools/I2C-Scanner) to find the display and sht31 addresses
 ------------
+
+<br>
+
 ###### OneWire settings:
 ###### ONE_WIRE_BUS - put your arduino number of pin where OneWire is connected
 ```cpp
 #define ONE_WIRE_BUS 2            // Pin Onewire (DT18B20) bus
 ```
+
+<br>
+
 ###### Intervals settings:
 ###### MEASUREMENTDELTA - sensor polling interval
 ###### LCDINTERVAL - display refresh interval
