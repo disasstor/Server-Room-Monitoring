@@ -9,9 +9,9 @@
 
 
 
-#define LCD_ADDRESS 0x3F         	  // i2c LCD address
-#define LCD_H 16                  	// number of horizontal cells
-#define LCD_V 2                   	// number of vertical cells
+#define LCD_ADDRESS 0x3F            // i2c address of display
+#define LCD_H 16                    // number of horizontal screen characters
+#define LCD_V 2                     // number of vertical screen characters
 #define SHT31_ADDRESS 0x44 		      // i2c address of SHT3X
 #define ONE_WIRE_BUS 2 			        // Onewire DT18B20 bus
 #define TEMPERATURE_PRECISION 10  	// DT18B20 temperature conversion accuracy
