@@ -98,10 +98,10 @@
 <br>
 
 # System Settings:
-###### Setting LCD 1602 or similar (2004 etc)
-###### LCD_ADDRESS - put your address of display
-###### LCD_H - put your number of horizontal screen characters
-###### LCD_V - put your number of vertical screen characters
+##### Setting LCD 1602 or similar (2004 etc)
+##### LCD_ADDRESS - put your address of display
+##### LCD_H - put your number of horizontal screen characters
+##### LCD_V - put your number of vertical screen characters
 ```cpp
 #define LCD_ADDRESS 0x3F          // i2c address of display
 #define LCD_H 16                  // number of horizontal screen characters
@@ -110,8 +110,8 @@
 
 <br>
 
-###### SHT3X settings:
-###### SHT31_ADDRESS - put your address of SHT31
+##### SHT3X settings:
+##### SHT31_ADDRESS - put your address of SHT31
 ```cpp
 #define SHT31_ADDRESS 0x44        // i2c address of SHT3X
 ```
@@ -121,17 +121,17 @@
 
 <br>
 
-###### OneWire settings:
-###### ONE_WIRE_BUS - put your arduino number of pin where OneWire is connected
+##### OneWire settings:
+##### ONE_WIRE_BUS - put your arduino number of pin where OneWire is connected
 ```cpp
 #define ONE_WIRE_BUS 2            // Pin Onewire (DT18B20) bus
 ```
 
 <br>
 
-###### Intervals settings:
-###### MEASUREMENTDELTA - sensor polling interval
-###### LCDINTERVAL - display refresh interval
+##### Intervals settings:
+##### MEASUREMENTDELTA - sensor polling interval
+##### LCDINTERVAL - display refresh interval
 ```cpp
 #define MEASUREMENTDELTA 10000    // Sensor polling interval
 #define LCDINTERVAL 5000          // Display refresh interval
@@ -139,7 +139,7 @@
 
 <br>
 
-###### DeviceAddress - put your address of ds18b20
+##### DeviceAddress - put your address of ds18b20
 ```cpp
 // OneWire sensor address array(you need to change the address to yours)
 DeviceAddress addrsensdt[] = {
@@ -158,7 +158,7 @@ DeviceAddress addrsensdt[] = {
 <br>
 
 # Zabbix Agent Settings:
-###### ItemKey - put your key
+##### ItemKey - put your key
 ```cpp
 String ItemKey = "GetData"      //Item key of zabbix host
 ```
@@ -169,8 +169,8 @@ String ItemKey = "GetData"      //Item key of zabbix host
 <br>
 
 # Network Settings:
-###### Сonfigure the network settings to be correct for your local network
-###### Important! Change MAC address! MAC address must be unique on your local network.
+##### Сonfigure the network settings to be correct for your local network
+##### Important! Change MAC address! MAC address must be unique on your local network.
 ```cpp
 byte mac[] = { 0x00, 0x00, 0x00, 0x00, 0x00, 0x00 };  // Important! Change MAC address!
                                                       // MAC address must be unique on your local network.
