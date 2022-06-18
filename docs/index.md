@@ -76,8 +76,8 @@
 
 <details>
   <summary>RJ45 CAT5 SINGLE PORT SURFACE MOUNT BOX - BOX FOR CONNECTING SENSORS TO ARDUINO</summary>
-  <img height="200px" src="img/rj45-single.png">
-  <img height="200px" src="img/rj45-single2.png">
+  <img height="200px" src="img/RJ45-single.png">
+  <img height="200px" src="img/RJ45-single2.png">
 </details>
 
 
