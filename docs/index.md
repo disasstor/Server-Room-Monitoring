@@ -35,47 +35,49 @@
 
 <details>
   <summary>ARDUINO UNO R3 - BASE</summary>
-  <img src="img/arduino-uno.png">
+  <img height="200px" src="img/arduino-uno.png">
 </details>
 
 <details>
   <summary>ETHERNET SHIELD W5100 - EXTEND SHIELD FOR ARDUINO</summary>
-  <img src="img/w5100.png">
+  <img height="200px" src="img/w5100.png">
 </details>
 
 <details>
   <summary>SHT31 - TEMPERATURE AND HUMIDITY SENSOR</summary>
-  <img src="img/sht31.png">
+  <img height="200px" src="img/sht31.png">
 </details>
 
 <details>
   <summary>DS18B20 - TEMPERATURE SENSOR</summary>
-  <img src="img/ds18b20.png">
+  <img height="200px" src="img/ds18b20.png">
 </details>
 
 <details>
   <summary>LCD 1602 I2C - DISPLAY</summary>
-  <img src="img/lcd1602.png">
+  <img height="200px" src="img/lcd1602.png">
 </details>
 
 <details>
   <summary>RESISTOR 4.7K - PULL-UP RESISTOR</summary>
-  <img src="img/resistor.png">
+  <img height="200px" src="img/resistor.png">
 </details>
 
 <details>
   <summary>D6MG DIN RAIL MOUNTING ENCLOSURE - BOX FOR ARDUINO</summary>
-  <img src="img/D6MG.png">
+  <img height="200px" src="img/d6mg.png">
 </details>
 
 <details>
   <summary>RJ45 CAT5 DUAL PORT SURFACE MOUNT BOX - BOX FOR SENSORS</summary>
-  <img src="img/rj45-dual-box.png">
+  <img height="200px" src="img/rj45-double.png">
+  <img height="200px" src="img/rj45-double2.png">
 </details>
 
 <details>
   <summary>RJ45 CAT5 SINGLE PORT SURFACE MOUNT BOX - BOX FOR CONNECTING SENSORS TO ARDUINO</summary>
-  <img src="img/rj45-single-box.png">
+  <img height="200px" src="img/rj45-single.png">
+  <img height="200px" src="img/rj45-single2.png">
 </details>
 
 
