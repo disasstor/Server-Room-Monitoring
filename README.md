@@ -1,5 +1,5 @@
 # What is this?
-##### Server Room Monitoring - a device for monitoring the temperature and humidity of servers, server rooms and just for rooms where environmental control is needed.
+##### Server Room Monitoring - a device for monitoring temperature and humidity of servers, server rooms and just for rooms where environmental control is needed.
 
 
 ------------
@@ -35,47 +35,49 @@
 
 <details>
   <summary>ARDUINO UNO R3 - BASE</summary>
-  <img src="docs/img/arduino-uno.png">
+  <img height="200px" src="docs/img/arduino-uno.png">
 </details>
 
 <details>
   <summary>ETHERNET SHIELD W5100 - EXTEND SHIELD FOR ARDUINO</summary>
-  <img src="docs/img/w5100.png">
+  <img height="200px" src="docs/img/w5100.png">
 </details>
 
 <details>
   <summary>SHT31 - TEMPERATURE AND HUMIDITY SENSOR</summary>
-  <img src="docs/img/sht31.png">
+  <img height="200px" src="docs/img/sht31.png">
 </details>
 
 <details>
   <summary>DS18B20 - TEMPERATURE SENSOR</summary>
-  <img src="docs/img/ds18b20.png">
+  <img height="200px" src="docs/img/ds18b20.png">
 </details>
 
 <details>
   <summary>LCD 1602 I2C - DISPLAY</summary>
-  <img src="docs/img/lcd1602.png">
+  <img height="200px" src="docs/img/lcd1602.png">
 </details>
 
 <details>
   <summary>RESISTOR 4.7K - PULL-UP RESISTOR</summary>
-  <img src="docs/img/resistor.png">
+  <img height="200px" src="docs/img/resistor.png">
 </details>
 
 <details>
   <summary>D6MG DIN RAIL MOUNTING ENCLOSURE - BOX FOR ARDUINO</summary>
-  <img src="docs/img/D6MG.png">
+  <img height="200px" src="docs/img/d6mg.png">
 </details>
 
 <details>
   <summary>RJ45 CAT5 DUAL PORT SURFACE MOUNT BOX - BOX FOR SENSORS</summary>
-  <img src="docs/img/rj45-dual-box.png">
+  <img height="200px" src="docs/img/rj45-double.png">
+  <img height="200px" src="docs/img/rj45-double2.png">
 </details>
 
 <details>
   <summary>RJ45 CAT5 SINGLE PORT SURFACE MOUNT BOX - BOX FOR CONNECTING SENSORS TO ARDUINO</summary>
-  <img src="docs/img/rj45-single-box.png">
+  <img height="200px" src="docs/img/RJ45-single.png">
+  <img height="200px" src="docs/img/RJ45-single2.png">
 </details>
 
 
@@ -93,30 +95,51 @@
 - [SHT31](https://github.com/RobTillaart/Arduino/tree/master/libraries/SHT31)
 - [GyverTimer](https://github.com/GyverLibs/GyverTimer)
 
+<br>
+
+# System Settings:
+##### Setting LCD 1602 or similar (2004 etc)
+##### LCD_ADDRESS - put your address of display
+##### LCD_H - put your number of horizontal screen characters
+##### LCD_V - put your number of vertical screen characters
+```cpp
+#define LCD_ADDRESS 0x3F          // i2c address of display
+#define LCD_H 16                  // number of horizontal screen characters
+#define LCD_V 2                   // number of vertical screen characters
+```
 
 <br>
 
-
-# System Settings:
+##### SHT3X settings:
+##### SHT31_ADDRESS - put your address of SHT31
 ```cpp
-#define LCD_ADDRESS 0x3F          // i2c LCD address
-#define LCD_H 16                  // number of horizontal cells
-#define LCD_V 2                   // number of vertical cells
 #define SHT31_ADDRESS 0x44        // i2c address of SHT3X
+```
+------------
+###### You'll need a [Scanner I<sup>2</sup>C](https://github.com/disasstor/Server-Room-Monitoring/tree/main/tools/I2C-Scanner) to find the display and sht31 addresses
+------------
+
+<br>
+
+##### OneWire settings:
+##### ONE_WIRE_BUS - put your arduino number of pin where OneWire is connected
+```cpp
 #define ONE_WIRE_BUS 2            // Pin Onewire (DT18B20) bus
-#define TEMPERATURE_PRECISION 10  // DT18B20 temperature conversion accuracy
-#define MAX_COMMAND_LENGTH 32     // Maximum Zabbix command length
+```
+
+<br>
+
+##### Intervals settings:
+##### MEASUREMENTDELTA - sensor polling interval
+##### LCDINTERVAL - display refresh interval
+```cpp
 #define MEASUREMENTDELTA 10000    // Sensor polling interval
 #define LCDINTERVAL 5000          // Display refresh interval
 ```
 
-
-------------
-###### You'll need a scanner i2c to find the display and sht31 addresses
-------------
-
 <br>
 
+##### DeviceAddress - put your address of ds18b20
 ```cpp
 // OneWire sensor address array(you need to change the address to yours)
 DeviceAddress addrsensdt[] = {
@@ -128,15 +151,14 @@ DeviceAddress addrsensdt[] = {
   { 0x28, 0x7E, 0x30, 0x83, 0x18, 0x20, 0x01, 0xB0 },	  // Address of the fifth sensor
 };
 ```
-
-
 ------------
-###### You'll need scanner onewire to find ds18b20 addresses 
+###### You'll need [Scanner OneWire](https://github.com/disasstor/Server-Room-Monitoring/tree/main/tools/OneWire-Scanner) to find ds18b20 addresses 
 ------------
 
 <br>
 
 # Zabbix Agent Settings:
+##### ItemKey - put your key
 ```cpp
 String ItemKey = "GetData"      //Item key of zabbix host
 ```
@@ -147,6 +169,8 @@ String ItemKey = "GetData"      //Item key of zabbix host
 <br>
 
 # Network Settings:
+##### Сonfigure the network settings to be correct for your local network
+##### Important! Change MAC address! MAC address must be unique on your local network.
 ```cpp
 byte mac[] = { 0x00, 0x00, 0x00, 0x00, 0x00, 0x00 };  // Important! Change MAC address!
                                                       // MAC address must be unique on your local network.
@@ -160,7 +184,7 @@ EthernetServer server(10050);                         // Change port if you need
 
 # Zabbix Server Settings:
 ------------
-###### This is an example setup, if you want to rename host or element, key etc differently you can do that.
+###### This is an example setup.
 ------------
 
 1) Create [host](https://www.zabbix.com/documentation/current/en/manual/config/hosts/host) with parameters:
@@ -169,6 +193,8 @@ EthernetServer server(10050);                         // Change port if you need
   - Interface: 
     - Type: Agent
     - IP: IP address Server Room Monitoring
+
+<br>
 
 2) Create [item](https://www.zabbix.com/documentation/current/en/manual/config/items/item) with parameters:
 
